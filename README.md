@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MS Club - Mini Hackathon 2024
 
-## Getting Started
+## Quick Links
+  - [Figma Design](#figma-design)
+  - [How to contribute](#how-to-contribute)
+  - [I really want to contribute but where do I start?](#i-really-want-to-contribute-but-where-do-i-start)
+  - [Recommended VS Code Extensions](#recommended-vs-code-extensions)
 
-First, run the development server:
+## [Figma Design](#figma-design)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Mini Hackathon 2024 UI](https://www.figma.com/design/xoLgrOz0YNDy1BjaRNfAxR/MiniHackathon-UI?node-id=147-125&t=k0W1AvqI47x5XrHu-1)
+
+## [How to contribute](#how-to)
+
+1. Clone the project to your own machine.
+
+`git clone https://github.com/ms-club-sliit/minihackathon-2024.git`
+
+2. Checkout to the development branch.
+
+`git checkout development`
+
+3. Create a branch using the git checkout command. [Git Branching Naming Convention](https://phoenixnap.com/kb/git-branch-name-convention) is recommended.
+
+`git checkout -b <your-new-branch-name>`
+
+4. Stage your changes and commit with a meaningful commit message. [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) is recommended.
+
+```
+git add .
+git commit -m "<initial commit>"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Push your work back up to github.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+`git push origin <add-your-branch-name>`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+6. Submit a Pull request to the `development` branch so that we can review your changes. [Learn about creating a pull request.](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
-## Learn More
+## [I really want to contribute but where do I start?](#resources)
 
-To learn more about Next.js, take a look at the following resources:
+We got your back. Here are some **FREE** resources for you to strengthen your web development skills and start firing some commits
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Next.js**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
 
-## Deploy on Vercel
+**Tailwind CSS**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Official Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Setup React and Tailwind CSS](https://www.freecodecamp.org/news/how-to-install-tailwindcss-in-react/)
+- [Learn Tailwind CSS](https://www.freecodecamp.org/news/learn-tailwind-css/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## [Recommended VS Code Extensions](#recommended-vs-code-extensions)
+
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
