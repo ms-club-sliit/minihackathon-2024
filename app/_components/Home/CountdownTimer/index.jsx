@@ -1,9 +1,16 @@
-// TODO: Create a countdown timer component.
+// TODO: Create a Eligibility component.
+
+import Timer from './timer'
 export default function CountdownTimer() {
     return (
-      <main>
-        <h1 className="text-6xl font-bold">Countdown Timer</h1>
-      </main>
+        <>
+            <div className="countdownTimer">
+                <div className="row text-center">
+                    <h2 className="text-2xl md:text-4xl text-neutral-500">Awareness Session</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mt-2">Coming Soon!</h2>
+                </div>
+                <div className="row mt-3"><Timer /></div>
+            </div>
+        </>
     );
-  }
-  
+}
