@@ -2,19 +2,14 @@
 import MSLogo from "../../public/images/logos/MSLogo.png";
 import FCSCLogo from "../../public/images/logos/FCSCLogo.png";
 import MLSALogo from "../../public/images/logos/MLSALogo.png";
-import Facebook from "../../public/images/logos/Facebook.png";
-import Instagram from "../../public/images/logos/Instagram.png";
-import Twitter from "../../public/images/logos/Twitter.png";
-import GitHub from "../../public/images/logos/GitHub.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 const socialMedia = [
-  { src: Facebook, alt: "Facebook", link: "/" },
-  { src: Instagram, alt: "Instagram", link: "/" },
-  { src: Twitter, alt: "Twitter", link: "/" },
-  { src: GitHub, alt: "GitHub", link: "/" },
+  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "/" },
+  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "/" },
+  { src: "/images/logos/Twitter.png", alt: "Twitter", link: "/" },
+  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "/" },
 ];
 
 const MSLogs = [
@@ -27,52 +22,46 @@ const MSLogs = [
   },
 ];
 
-// TODO: Create a footer component that displays the footer of the website.
 export default function Footer() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleNav = () => {
-    setMenuOpen(!menuOpen);
-  };
   return (
-    // ! Change as needed.
-    <footer className="p-4 bg-white shadow md:px-20 md:py-8">
-      <hr className="my-6 border-gray-700 sm:mx-auto dark:border-gray-800 lg:my-8" />
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+    <footer className="bg-white py-8 shadow-md">
+      <hr className="my-6 border-gray-300 dark:border-gray-700" />
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row sm:gap-5 justify-between items-center">
         {/* MS Logos */}
-        <div className="flex items-center space-x-4 sm:space-x-8 sm:order-1">
-          {MSLogs.map((MSLogo, index) => (
-            <Link href={MSLogo.link} key={index}>
+        <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-0">
+          {MSLogs.map((logo, index) => (
+            <Link href={logo.link} key={index}>
               <Image
-                src={MSLogo.src}
-                alt={MSLogo.alt}
-                className="cursor-pointer mr-5 w-35 h-35 sm:w-25 sm:h-25 sm:ml-75"
+                src={logo.src}
+                alt={logo.alt}
+                className="cursor-pointer "
               />
             </Link>
           ))}
         </div>
-        {/*Copy right text*/}
-        <span className="block text-sm text-black-800 text-center font-medium  my-4 sm:order-2 sm:my-0 sm:ml-4">
-          Copyright © 2022{" "}
+        {/* Copyright text */}
+        <div className="text-center text-sm text-gray-700 mb-4 sm:mb-0">
+          Copyright © 2024{" "}
           <a href="https://msclubsliit.org/" className="hover:underline">
             MS Club of SLIIT
           </a>
           . All Rights Reserved.
-        </span>
-
-        {/* social media */}
-        <div className="flex items-center justify-center sm:space-x-4 sm:order-3 sm:mr-80">
+        </div>
+        {/* Social Media Icons */}
+        <div className="flex items-center space-x-4">
           {socialMedia.map((social, index) => (
             <Link href={social.link} key={index}>
               <Image
                 src={social.src}
                 alt={social.alt}
-                className="cursor-pointer mr-1 w-6 h-6 sm:w-8 sm:h-8"
+                width={100}
+                height={100}
+                className="cursor-pointer w-6 h-6 sm:w-8 sm:h-8"
               />
             </Link>
           ))}
         </div>
       </div>
     </footer>
-  );
+  );
 }
