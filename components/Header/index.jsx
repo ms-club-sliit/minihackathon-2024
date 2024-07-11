@@ -1,21 +1,15 @@
 "use client";
 import { Link as Scroll } from "react-scroll";
 import Link from "next/link";
-import logomain from "../../public/images/logos/logomain.png";
-import menu from "../../public/images/icons/menu.png";
-import Facebook from "../../public/images/logos/Facebook.png";
-import Instagram from "../../public/images/logos/Instagram.png";
-import Twitter from "../../public/images/logos/Twitter.png";
-import GitHub from "../../public/images/logos/GitHub.png";
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const socialMedia = [
-  { src: Facebook, alt: "Facebook", link: "/" },
-  { src: Instagram, alt: "Instagram", link: "/" },
-  { src: Twitter, alt: "Twitter", link: "/" },
-  { src: GitHub, alt: "GitHub", link: "/" },
+  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "/" },
+  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "/" },
+  { src: "/images/logos/Twitter.png", alt: "Twitter", link: "/" },
+  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "/" },
 ];
 
 const navItems = [
@@ -42,10 +36,10 @@ export default function Header() {
       <div className="flex flex-col items-center flex-wrap">
         <Link href="/">
           <Image
-            src={logomain}
+            src="/images/logos/logomain.png"
             alt="logo-main"
-            width="309"
-            height="358"
+            width={309}
+            height={358}
             className="cursor-pointer mt-4"
             priority
           />
@@ -57,12 +51,12 @@ export default function Header() {
               {navItems.map((item, index) => (
                 <li key={index}>
                   {item.link ? (
-                    <Link href={item.link} className="text-lg font-semibold">
+                    <Link href={item.link} className="text-lg font-semibold cursor-pointer">
                       {item.name}
                     </Link>
                   ) : (
                     <Scroll
-                      className="text-lg font-semibold"
+                      className="text-lg font-semibold cursor-pointer"
                       to={item.to}
                       spy={true}
                       smooth={true}
@@ -81,8 +75,10 @@ export default function Header() {
           {/* menu icon */}
           <div className="lg:hidden">
             <Image
-              src={menu}
+              src="/images/icons/menu.png"
               alt="menu"
+              width={100}
+              height={100}
               className="cursor-pointer w-6 h-6 sm:w-8 sm:h-8"
               onClick={handleNav}
             />
@@ -94,6 +90,8 @@ export default function Header() {
                 <Image
                   src={social.src}
                   alt={social.alt}
+                  width={100}
+                  height={100}
                   className="cursor-pointer mr-1 w-6 h-6 sm:w-8 sm:h-8"
                 />
               </Link>
@@ -147,6 +145,8 @@ export default function Header() {
               <Image
                 src={social.src}
                 alt={social.alt}
+                width={100}
+                height={100}
                 className="cursor-pointer mr-1 w-8 h-8"
               />
             </Link>
@@ -155,7 +155,7 @@ export default function Header() {
         <div className="flex items-center w-full">
           <Link href="/">
             <Image
-              src={logomain}
+              src="/images/logos/logomain.png"
               alt="logo-main"
               width="309"
               height="358"
