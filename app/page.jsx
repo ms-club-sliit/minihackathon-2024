@@ -5,17 +5,17 @@ import Hero from "./_components/Home/Hero";
 import PastWinners from "./_components/Home/PastWinners";
 import Sponsor from "./_components/Home/Sponsor";
 import Timeline from "./_components/Home/Timeline";
-//
+
 export default function Home() {
   return (
     <main>
       <Hero />
       <CountdownTimer />
-      {/* <Eligibility />
+      <Eligibility />
       <Timeline />
       <Gallery />
       <Sponsor />
-      <PastWinners /> */}
+      <PastWinners />
     </main>
   );
 }

@@ -1,5 +1,3 @@
-// TODO: Create a Eligibility component.
-
 import Timer from './timer'
 export default function CountdownTimer() {
     return (
