@@ -1,7 +1,7 @@
 // TODO: Create a Eligibility component.
 export default function Eligibility() {
   return (
-    <main id="eligibility" className="mb-14">
+    <main id="eligibility" className="sm:mt-10 mt-3">
       <h1 className="text-2xl text-[#1E293B] font-bold text-center mb-4 min-[744px]:text-[40px] min-[744px]:mb-9 min-[1440px]:text-[48px] min-[1440px]:mb-7">
         Who Can Participate?
       </h1>
