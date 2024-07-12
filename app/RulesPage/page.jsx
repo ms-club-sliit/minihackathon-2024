@@ -1,8 +1,11 @@
+import Container from '@/components/Container'
 import React from 'react'
 
 const RulesPage = () => {
   return (
-    <div>RulesPage</div>
+    <div>
+      <Container />
+    </div>
   )
 }
 
