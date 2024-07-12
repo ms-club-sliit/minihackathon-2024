@@ -1,7 +1,4 @@
 "use client";
-import MSLogo from "../../public/images/logos/MSLogo.png";
-import FCSCLogo from "../../public/images/logos/FCSCLogo.png";
-import MLSALogo from "../../public/images/logos/MLSALogo.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,19 +10,33 @@ const socialMedia = [
 ];
 
 const MSLogs = [
-  { src: MSLogo, alt: "MS Club Of SLIIT", link: "https://msclubsliit.org/" },
-  { src: FCSCLogo, alt: "FCSC LOGO", link: "https://msclubsliit.org/" },
   {
-    src: MLSALogo,
+    src: "/images/logos/MSLogo.png",
+    alt: "MS Club Of SLIIT",
+    link: "https://msclubsliit.org",
+    width: 120,
+    height: 120,
+  },
+  {
+    src: "/images/logos/FCSCLogo.png",
+    alt: "FCSC LOGO",
+    link: "https://msclubsliit.org",
+    width: 120,
+    height: 120,
+  },
+  {
+    src: "/images/logos/MLSALogo.png",
     alt: "MLSA Logo",
-    link: "https://studentambassadors.microsoft.com/",
+    link: "https://studentambassadors.microsoft.com",
+    width: 50,
+    height: 50,
   },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-white py-8 shadow-md">
-      <hr className="my-6 border-gray-300 dark:border-gray-700" />
+      <hr className="my-6 border-gray-300" />
       <div className="container mx-auto px-4 flex flex-col lg:flex-row sm:gap-5 justify-between items-center">
         {/* MS Logos */}
         <div className="flex items-center space-x-4 sm:space-x-6 mb-4 sm:mb-0">
@@ -34,15 +45,17 @@ export default function Footer() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                className="cursor-pointer "
+                width={logo.width}
+                height={logo.height}
+                className="cursor-pointer"
               />
             </Link>
           ))}
         </div>
         {/* Copyright text */}
         <div className="text-center text-sm text-gray-700 mb-4 sm:mb-0">
-          Copyright © 2024{" "}
-          <a href="https://msclubsliit.org/" className="hover:underline">
+          Copyright &copy; 2024&nbsp;
+          <a href="https://msclubsliit.org" className="hover:underline">
             MS Club of SLIIT
           </a>
           . All Rights Reserved.
@@ -63,5 +76,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  );
 }
