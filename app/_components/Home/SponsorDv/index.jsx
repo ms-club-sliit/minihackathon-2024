@@ -6,7 +6,7 @@ const Sponsors = () => {
     <div className="text-center justify-center py-8  ">
       {Object.keys(sponsorData).map((category) => (
         <div key={category} className="">
-          <h2 className="text-6xl font-bold mb-4">{category}</h2>
+          <h2 className="text-6xl font-bold">{category}</h2>
           <div className="flex flex-row justify-center py-8 bg-sponsors-bg bg-cover bg-center">
             {sponsorData[category].map((Sponsor) => (
               <div key={Sponsor.id} className="items-center mx-4">
