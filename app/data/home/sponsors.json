@@ -1,5 +1,5 @@
 {
-    "Gold": [
+    "Gold Sponsors": [
       {
         "id": 1,
         "src": "/images/home/sponsors/1.png",
@@ -15,32 +15,32 @@
         "height": 200
       }
     ],
-    "Silver": [
+    "Silver Sponsors": [
       {
-        "id": 3,
+        "id": 6,
         "src": "/images/home/sponsors/1.png",
         "alt": "Silver Sponsor 1",
         "width": 300,
         "height": 200
       },
       {
-        "id": 4,
+        "id": 7,
         "src": "/images/home/sponsors/1.png",
         "alt": "Silver Sponsor 2",
         "width": 300,
         "height": 200
       }
     ],
-    "Platinum": [
+    "Bronze Sponsors": [
       {
-        "id": 5,
+        "id": 10,
         "src": "/images/home/sponsors/1.png",
         "alt": "Platinum Sponsor 1",
         "width": 300,
         "height": 200
       },
       {
-        "id": 6,
+        "id": 11,
         "src": "/images/home/sponsors/1.png",
         "alt": "Platinum Sponsor 2",
         "width": 300,
