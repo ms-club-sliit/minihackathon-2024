@@ -12,3 +12,13 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.vertical-timeline::before{
+    /*width: 10px;  Adjust the width of the timeline */
+    /*border-left: 10px solid;  Change to dotted line */
+    border: 15px solid ;
+    border-color: #E2E2E2;
+    padding: 5px;
+    background: var(--line-color);
+}
+
