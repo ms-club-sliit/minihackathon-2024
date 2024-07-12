@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "image of the sponsor",
+      "width":395,
+      "height":293
+    },
+    {
+      "id": 2,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "image of the sponsor",
+      "width":395,
+      "height":293
+    },
+    {
+      "id": 3,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "image of the sponsor",
+      "width":395,
+      "height":293
+    },
+    {
+      "id": 4,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "image of the sponsor",
+      "width":395,
+      "height":293
+    }
+  ]  

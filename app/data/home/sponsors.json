@@ -1,0 +1,51 @@
+{
+    "Gold": [
+      {
+        "id": 1,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Gold Sponsor 1",
+        "width": 300,
+        "height": 200
+      },
+      {
+        "id": 2,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Gold Sponsor 2",
+        "width": 300,
+        "height": 200
+      }
+    ],
+    "Silver": [
+      {
+        "id": 3,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Silver Sponsor 1",
+        "width": 300,
+        "height": 200
+      },
+      {
+        "id": 4,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Silver Sponsor 2",
+        "width": 300,
+        "height": 200
+      }
+    ],
+    "Platinum": [
+      {
+        "id": 5,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Platinum Sponsor 1",
+        "width": 300,
+        "height": 200
+      },
+      {
+        "id": 6,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Platinum Sponsor 2",
+        "width": 300,
+        "height": 200
+      }
+    ]
+  }
+  

@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "src": "/images/images/home/sponsors/1.png",
+      "alt": "image of the sponsor",
+    },
+    {
+      "id": 2,
+      "src": "/images/images/home/sponsors/Gold_2.jpeg",
+      "alt": "image of the sponsor",
+    },
+    {
+      "id": 3,
+      "src": "/images/images/home/sponsors/Gold_3.jpeg",
+      "alt": "image of the sponsor",
+    }
+  ]  
