@@ -1,0 +1,19 @@
+{
+	"data": [
+		{
+			"id": 1,
+			"description": "The Mini Hackathon victory was a testament to our teamwork, dedication, and innovation. It's incredible how this competition has paved the way for us to explore new horizons and build a network within the tech community.",
+			"imageUrl": "/assets/pastwinners/winners.webp"
+		},
+		{
+			"id": 2,
+			"description": "The Mini Hackathon has been a challenging and exhilarating journey. Securing a top position is a testament to our hard work and determination. This accomplishment will serve as a stepping stone to greater achievements.",
+			"imageUrl": "/assets/pastwinners/runners_up.webp"
+		},
+		{
+			"id": 3,
+			"description": "The Mini Hackathon pushed us to think outside the box and put our skills to the test. We are grateful for the recognition we received, and this competition has definitely prepared us for even greater challenges.",
+			"imageUrl": "/assets/pastwinners/2nd_runners_up.webp"
+		}
+	]
+}
