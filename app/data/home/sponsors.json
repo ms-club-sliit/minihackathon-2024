@@ -13,6 +13,20 @@
         "alt": "Gold Sponsor 2",
         "width": 300,
         "height": 200
+      },
+      {
+        "id": 3,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Gold Sponsor 2",
+        "width": 300,
+        "height": 200
+      },
+      {
+        "id": 4,
+        "src": "/images/home/sponsors/1.png",
+        "alt": "Gold Sponsor 2",
+        "width": 300,
+        "height": 200
       }
     ],
     "Silver Sponsors": [
