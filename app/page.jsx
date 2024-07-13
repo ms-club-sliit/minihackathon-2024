@@ -6,7 +6,6 @@ import PastWinners from "./_components/Home/PastWinners";
 import Sponsor from "./_components/Home/Sponsor";
 import Timeline from "./_components/Home/Timeline";
 
-
 export default function Home() {
   return (
     <main>
