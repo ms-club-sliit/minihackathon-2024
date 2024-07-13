@@ -7,7 +7,7 @@ import PastWinners from "./_components/Home/PastWinners";
 import Sponsor from "@/components/Home/Sponsors/sponsors";
 import Timeline from "./_components/Home/Timeline";
 
-//
+
 export default function Home() {
   return (
     <main>
