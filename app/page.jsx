@@ -5,6 +5,7 @@ import Hero from "./_components/Home/Hero";
 import PastWinners from "./_components/Home/PastWinner";
 import Sponsor from "./_components/Home/Sponsor";
 import Timeline from "./_components/Home/Timeline";
+import PastWinnersList from "./_components/view/PastWinnersList";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Timeline />
       <Gallery />
       <Sponsor />
-      <PastWinners />
+      <PastWinnersList/>
     </main>
   );
 }
