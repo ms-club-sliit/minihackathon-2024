@@ -15,9 +15,9 @@ export default function Timeline() {
   return (
     <main className="relative custom-gradient mb-20">
       <h1 id="timeline" className="text-2xl font-bold text-center mt-20 text-[#1E293B] min-[744px]:text-[38px] min-[1440px]:text-5xl">Timeline</h1>
-      <img src="images/robot-top.png" className="h-[97px] md:ml-12 lg:mx-auto lg:pl-10 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[360px]" />
-      <img src="images/design-left.png" className="absolute opacity-[10%] left-0 h-[220px] w-[350px] "/>
-      <img src="images/design-right.png" className="absolute opacity-[10%] right-0 h-[220px] w-[350px]"/>
+      <img src="images/robot-top.png" alt="robot-top" className="h-[97px] min-[744px]:ml-12 lg:mx-auto lg:pl-10 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[360px]" />
+      <img src="images/design-left.png" alt="design-left" className="absolute opacity-[10%] left-0 top-1/4 h-[220px] w-[350px] min-[744px]:h-[486px] min-[744px]:w-[225px] min-[1440px]:h-[660px] min-[1440px]:w-[1078px] min-[1440px]:top-3/4"/>
+      <img src="images/design-right.png" alt="design-right" className="absolute opacity-[10%] right-0 top-1/3 h-[220px] w-[350px] min-[744px]:h-[486px] min-[744px]:w-[225px] min-[1440px]:h-[660px] min-[1440px]:w-[1078px] min-[1440px]:top-[60%]"/>
       <VerticalTimeline animate={true} className="custom">
         {
           TimelineData.map((timeline, index) => (
@@ -45,8 +45,8 @@ export default function Timeline() {
         }
       </VerticalTimeline>
       {/* Change the Top percentage value at the end*/}
-      <img src="images/robot-end.png" className="h-[98px] -mt-10 md:left-24 absolute min-[1170px]:left-48 lg:top-[48%] min-[744px]:h-[120px] min-[744px]:w-[120px] min-[1440px]:h-[210px] min-[1440px]:w-[218px]" />
-      <img src="images/robot-right.png" className="h-[113px] w-[141px] ml-auto mr-10 -mt-10 lg:-mt-52 lg:mr-20 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[300px]" />
+      <img src="images/robot-end.png" alt="robot-end" className="h-[98px] -mt-10 min-[744px]:left-24 absolute min-[1170px]:left-48 lg:top-[48%] min-[744px]:h-[120px] min-[744px]:w-[120px] min-[1440px]:h-[210px] min-[1440px]:w-[218px]" />
+      <img src="images/robot-right.png" alt="robot-right" className="h-[113px] w-[141px] ml-auto mr-10 -mt-10 lg:-mt-52 lg:mr-20 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[300px]" />
     </main>
   );
 }
