@@ -1,14 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.countdownTimer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    background-image: url("/images/ctbg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
