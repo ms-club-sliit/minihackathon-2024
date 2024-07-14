@@ -29,7 +29,6 @@ export default function Timeline() {
                 className="vertical-timeline-element--work z-10 custom-sm-card"
                 contentStyle={{ boxShadow: '0px 2px 9px #807E7E', borderRadius: '15px', marginBottom: '18px', height: "fit" }}
                 contentArrowStyle={{ borderRight: '10px solid  #0080FF', }}
-                //className="bg-gray-500"
                 iconClassName="custom-icon bg-[#0080FF] border-solid border-[10px] lg:border-[15px] border-[#434040]"
               >
                 <div className="">
@@ -44,7 +43,6 @@ export default function Timeline() {
           ))
         }
       </VerticalTimeline>
-      {/* Change the Top percentage value at the end*/}
       <img src="images/robot-end.png" alt="robot-end" className="h-[98px] -mt-10 min-[744px]:left-24 absolute min-[1170px]:left-48 lg:top-[48%] min-[744px]:h-[120px] min-[744px]:w-[120px] min-[1440px]:h-[210px] min-[1440px]:w-[218px]" />
       <img src="images/robot-right.png" alt="robot-right" className="h-[113px] w-[141px] ml-auto mr-10 -mt-10 lg:-mt-52 lg:mr-20 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[300px]" />
     </main>

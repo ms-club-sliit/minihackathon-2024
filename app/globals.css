@@ -20,8 +20,6 @@
 }
 
 .vertical-timeline::before {
-    /*width: 10px;  Adjust the width of the timeline */
-    /*border-left: 10px solid;  Change to dotted line */
     width: 1px;
     border: 15px solid;
     border-color: #E2E2E2;
@@ -37,7 +35,6 @@
 @media only screen and (min-width: 1170px) {
     .vertical-timeline--two-columns .vertical-timeline-element-icon.custom-icon {
         margin-left: -15px;
-        /* Adjusted to center the icon correctly */
     }
 }
 
@@ -52,8 +49,6 @@
         width: 374px !important;
     }
 }
-
-
 
 .custom-gradient {
     background: linear-gradient(175deg,
