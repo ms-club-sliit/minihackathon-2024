@@ -29,10 +29,13 @@ export default function Timer() {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({});
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Calculate initial time left on client side only
+    setTimeLeft(calculateTimeLeft());
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -50,7 +53,7 @@ export default function Timer() {
     };
   }, []);
 
-  const { days, hours, minutes, seconds } = timeLeft;
+  const { days = 0, hours = 0, minutes = 0, seconds = 0 } = timeLeft;
 
   const createCircle = (value, max, label) => {
     const radius = isMobile ? 40 : 45;
@@ -59,50 +62,47 @@ export default function Timer() {
     const strokeDashoffset = (1 - (value / max)) * circumference;
     const strokeWidth = isMobile ? 5 : 10;
 
-    const outerRadius = radius;
-    const innerRadius = outerRadius;
-
     return (
-      <div className="flex flex-col items-center">
-        <div className={`relative ${isMobile ? 'w-16 h-16' : 'w-32 h-32'}`}>
-          <svg className="w-full h-full transform -rotate-90">
-            <circle
-              cx="50%"
-              cy="50%"
-              r={`${outerRadius}%`}
-              stroke="#D9D9D9"
-              strokeWidth={strokeWidth}
-              fill="none"
-            />
-            <circle
-              cx="50%"
-              cy="50%"
-              r={`${innerRadius}%`}
-              stroke="#0080FF"
-              strokeWidth={strokeWidth}
-              strokeDasharray={strokeDasharray}
-              strokeDashoffset={strokeDashoffset}
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex flex-col items-center">
+          <div className={`relative ${isMobile ? 'w-16 h-16' : 'w-32 h-32'}`}>
+            <svg className="w-full h-full transform -rotate-90">
+              <circle
+                  cx="50%"
+                  cy="50%"
+                  r={`${radius}%`}
+                  stroke="#D9D9D9"
+                  strokeWidth={strokeWidth}
+                  fill="none"
+              />
+              <circle
+                  cx="50%"
+                  cy="50%"
+                  r={`${radius}%`}
+                  stroke="#0080FF"
+                  strokeWidth={strokeWidth}
+                  strokeDasharray={strokeDasharray}
+                  strokeDashoffset={strokeDashoffset}
+                  fill="none"
+                  strokeLinecap="round"
+              />
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center">
             <span className={`text-lg ${isMobile ? 'text-base' : 'text-2xl'} font-semibold`}>
               {value}
             </span>
+            </div>
           </div>
+          <div className={`text-sm ${isMobile ? 'text-xs' : 'text-xl'} mt-2`}>{label}</div>
         </div>
-        <div className={`text-sm ${isMobile ? 'text-xs' : 'text-xl'} mt-2`}>{label}</div>
-      </div>
     );
   };
 
   return (
-    <div className="flex flex-row justify-center space-x-2 sm:space-x-4">
-      {createCircle(days, 365, 'Days')}
-      {createCircle(hours, 24, 'Hours')}
-      {createCircle(minutes, 60, 'Minutes')}
-      {createCircle(seconds, 60, 'Seconds')}
-    </div>
+      <div className="flex flex-row justify-center space-x-2 sm:space-x-4">
+        {createCircle(days, 365, 'Days')}
+        {createCircle(hours, 24, 'Hours')}
+        {createCircle(minutes, 60, 'Minutes')}
+        {createCircle(seconds, 60, 'Seconds')}
+      </div>
   );
 }
