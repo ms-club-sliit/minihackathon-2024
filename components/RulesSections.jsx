@@ -7,24 +7,24 @@ const RulesSections = ({ sections }) => {
         <div key={index} className={section.className}>
           <h2 className={section.title.className}>{section.title.text}</h2>
           {Array.isArray(section.content) ? (
-            section.content.map((content, idx) => (
-              <p key={idx} className={content.className}>{content.text}</p>
+            section.content.map((content, index) => (
+              <p key={index} className={content.className}>{content.text}</p>
             ))
           ) : (
             <p className={section.content.className}>{section.content.text}</p>
           )}
           {section.list && (
             <ul className={section.list.className}>
-              {section.list.items.map((item, idx) => (
-                <li key={idx}>{item}</li>
+              {section.list.items.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
           )}
           {section.note && (
             <p className={section.note.className}>{section.note.text}</p>
           )}
-          {section.rounds && section.rounds.map((round, idx) => (
-            <div key={idx}>
+          {section.rounds && section.rounds.map((round, index) => (
+            <div key={index}>
               <h3 className={round.title.className}>{round.title.text}</h3>
               <p className={round.content.className}>{round.content.text}</p>
               {round.advancement && (
@@ -42,8 +42,8 @@ const RulesSections = ({ sections }) => {
               )}
             </div>
           ))}
-          {section.prizes && section.prizes.map((prize, idx) => (
-            <div key={idx} className={prize.className}>
+          {section.prizes && section.prizes.map((prize, index) => (
+            <div key={index} className={prize.className}>
               <p>{prize.place}: {prize.reward}</p>
             </div>
           ))}
