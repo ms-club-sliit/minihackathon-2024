@@ -13,6 +13,8 @@
     background-position: center;
 }
 
+/* Styles for the Vertical Timeline */
+
 @media (min-width: 744px) and (max-width: 1170px) {
     .vertical-timeline.custom {
         width: 70%;
@@ -56,3 +58,5 @@
             rgba(0, 128, 255, 0.14) 48.5%,
             rgba(255, 255, 255, 0.02) 97.24%);
 }
+
+/* End Of Styles for the Vertical Timeline */
