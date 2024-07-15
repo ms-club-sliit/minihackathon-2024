@@ -64,11 +64,12 @@ jobs:
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
+        if: github.event_name != 'pull_request'  # Don't push on PR
         id: build-and-push
         uses: docker/build-push-action@v4
         with:
           context: "{{defaultContext}}:src"
-          push: ${{ github.event_name != 'pull_request' }} # Don't push on PR
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
