@@ -1,0 +1,29 @@
+{
+  "Gold Sponsors": [
+    {
+      "id": 1,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "Gold Sponsor 1",
+      "width": 300,
+      "height": 200
+    }
+  ],
+  "Silver Sponsors": [
+    {
+      "id": 2,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "Silver Sponsor 1",
+      "width": 300,
+      "height": 200
+    }
+  ],
+  "Bronze Sponsors": [
+    {
+      "id": 3,
+      "src": "/images/home/sponsors/1.png",
+      "alt": "Platinum Sponsor 1",
+      "width": 300,
+      "height": 200
+    }
+  ]
+}
