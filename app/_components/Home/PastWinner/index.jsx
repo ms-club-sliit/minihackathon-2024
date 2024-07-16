@@ -3,16 +3,11 @@ import PastWinnersData from "../../data/PastWinners.json";
 
 const PastWinner = () => {
   return (
-    <div className="relative mr-0">
-      <img 
-        src="images/design-left.png" 
-        alt="design-left" 
-        className="absolute flex flex-row justify-start py-28 bg-sponsors-bg bg-cover bg-center overflow-hidden "/>
-      
+    <>
+
       {PastWinnersData.data.map((winner) => (
         
-<div className="grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto mx-6">
-
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto  mx-6 bg-white">
 
           {winner.id % 2 === 0 ? (
             <>
@@ -35,7 +30,7 @@ const PastWinner = () => {
               </div>
             </>
           ) : (
-            <>
+            < >
               <div className="flex justify-start">
                 <img
                   src={winner.imageUrl}
@@ -51,8 +46,9 @@ const PastWinner = () => {
             </>
           )}
         </div>
+        
       ))}
-    </div>
+    </>
   );
 };
 
