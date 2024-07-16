@@ -1,6 +1,5 @@
 import React from "react";
-import PastWinnersData from "../../data/PastWinners.json"; // Ensure this is the correct path
-import PastWinner from "../../Home/PastWinner";
+import PastWinner from "../../../app/_components/Home/PastWinner";
 
 
 const PastWinnersList = () => {
