@@ -3,60 +3,66 @@
 @tailwind utilities;
 
 .countdownTimer {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    background-image: url("/images/ctbg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-image: url("/images/ctbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Styles for the Vertical Timeline */
 
 @media (min-width: 744px) and (max-width: 1170px) {
-    .vertical-timeline.custom {
-        width: 70%;
-    }
+  .vertical-timeline.custom {
+    width: 70%;
+  }
 }
 
 .vertical-timeline::before {
-    width: 1px;
-    border: 15px solid;
-    border-color: #E2E2E2;
-    padding: 5px;
-    background: var(--line-color);
-    border-radius: 50px 50px 50px 50px;
+  width: 1px;
+  border: 15px solid;
+  border-color: #e2e2e2;
+  padding: 5px;
+  background: var(--line-color);
+  border-radius: 50px 50px 50px 50px;
 }
 
 .vertical-timeline-element-icon {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 1170px) {
-    .vertical-timeline--two-columns .vertical-timeline-element-icon.custom-icon {
-        margin-left: -15px;
-    }
+  .vertical-timeline--two-columns .vertical-timeline-element-icon.custom-icon {
+    margin-left: -15px;
+  }
 }
 
 @media only screen and (max-width: 1170px) {
-    .vertical-timeline-element-content {
-        margin-left: 80px !important;
-    }
+  .vertical-timeline-element-content {
+    margin-left: 80px !important;
+  }
 }
 
 @media (min-width: 744px) and (max-width: 1170px) {
-    .vertical-timeline-element-content {
-        width: 374px !important;
-    }
+  .vertical-timeline-element-content {
+    width: 374px !important;
+  }
 }
 
 .custom-gradient {
-    background: linear-gradient(175deg,
-            rgba(255, 255, 255, 0.12) -0.23%,
-            rgba(0, 128, 255, 0.14) 48.5%,
-            rgba(255, 255, 255, 0.02) 97.24%);
+  background: linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 0.12) -0.23%,
+    rgba(0, 128, 255, 0.14) 48.5%,
+    rgba(255, 255, 255, 0.02) 97.24%
+  );
 }
 
 /* End Of Styles for the Vertical Timeline */
+
+.gradient-45 {
+  background: linear-gradient(45deg, #afdeff9c, white);
+}
