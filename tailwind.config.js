@@ -12,7 +12,6 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "sponsors-bg":'url("/images/home/Sponsors.png")',
-        "left-image":'url("/images/design-left.png")',
       },
     },
   },
