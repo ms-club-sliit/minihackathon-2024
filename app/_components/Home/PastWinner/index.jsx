@@ -6,12 +6,8 @@ const PastWinner = () => {
     <>
       {PastWinnersData.data.map((winner) => (
         
-        <div
-          key={winner.id}
-          className={`grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto mx-6`}
+        <div className="grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto mx-8">
 
-        >
-        <img src="images/design-left.png" alt="design-left" className="absolute opacity-[10%] left-0 top-1/4 h-[220px] w-[350px] min-[744px]:h-[486px] min-[744px]:w-[225px] min-[1440px]:h-[660px] min-[1440px]:w-[1078px] min-[1440px]:top-3/4" />
 
           {winner.id % 2 === 0 ? (
             <>
