@@ -14,9 +14,8 @@ module.exports = {
       },
       colors: {
         customBlue: '#E6F2FF',
-        textBlue_1 : '#0080FF',
+        textBlue : '#0080FF',
         textGrey : '#737272'
-        // textBlue_2 : '#E6F2FF',
       },
     },
   },
