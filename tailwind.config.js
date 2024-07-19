@@ -13,7 +13,14 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "sponsors-bg":'url("/images/home/Sponsors.png")',
       },
+      colors: {
+        customBlue: '#E6F2FF',
+        textBlue : '#0080FF',
+        textGrey : '#737272'
+      },
     },
   },
+  
   plugins: [],
+  
 };
