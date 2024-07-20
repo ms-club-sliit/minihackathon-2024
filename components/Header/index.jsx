@@ -1,5 +1,4 @@
 "use client";
-import { Link as Scroll } from "react-scroll";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
@@ -14,9 +13,9 @@ const socialMedia = [
 
 const navItems = [
   { name: "Home", link: "/" },
-  { name: "Eligibility", to: "eligibility" },
-  { name: "Timeline", to: "timeline" },
-  { name: "Gallery", to: "gallery" },
+  { name: "Eligibility", link: "/#eligibility" },
+  { name: "Timeline", link: "/#timeline" },
+  { name: "Gallery", link: "/#gallery" },
   { name: "Rules", link: "/rules" },
 ];
 
@@ -50,23 +49,12 @@ export default function Header() {
             <ul className="flex justify-around gap-12 items-center">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  {item.link ? (
-                    <Link href={item.link} className="text-lg font-semibold cursor-pointer">
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <Scroll
-                      className="text-lg font-semibold cursor-pointer"
-                      to={item.to}
-                      spy={true}
-                      smooth={true}
-                      offset={10}
-                      duration={500}
-                      delay={100}
-                    >
-                      {item.name}
-                    </Scroll>
-                  )}
+                  <Link
+                    href={item.link}
+                    className="text-lg font-semibold cursor-pointer"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
               {/* Contact - redirect to facebook page */}
@@ -118,23 +106,9 @@ export default function Header() {
           <ul className="flex flex-col gap-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                {item.link ? (
-                  <Link href={item.link} className="text-lg font-semibold">
-                    {item.name}
-                  </Link>
-                ) : (
-                  <Scroll
-                    className="text-lg font-semibold"
-                    to={item.to}
-                    spy={true}
-                    smooth={true}
-                    offset={10}
-                    duration={500}
-                    delay={100}
-                  >
-                    {item.name}
-                  </Scroll>
-                )}
+                <Link href={item.link} className="text-lg font-semibold">
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
