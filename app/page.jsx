@@ -2,7 +2,7 @@ import CountdownTimer from "./_components/Home/CountdownTimer";
 import Eligibility from "./_components/Home/Eligibility";
 import Gallery from "./_components/Home/Gallery";
 import Hero from "./_components/Home/Hero";
-import PastWinners from "./_components/Home/PastWinners";
+import PastWinnersList from "../components/Home/PastWinner";
 import Sponsor from "@/components/Home/Sponsors/sponsors";
 import Timeline from "./_components/Home/Timeline";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Timeline />
       <Gallery />
       <Sponsor />
-      <PastWinners />
+      <PastWinnersList />
     </main>
   );
 }
