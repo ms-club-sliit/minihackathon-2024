@@ -5,8 +5,8 @@ const PastWinner = () => {
   return (
     <>
       {PastWinnersData.data.length > 0 ? (
-        PastWinnersData.data.map((winner ,index) => (
-          <div  key={index} className="grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto mx-8 bg-white">
+        PastWinnersData.data.map((winner, index) => (
+          <div key={index} className="grid grid-cols-1 md:grid-cols-2 mb-5 md:mx-auto px-7 py-7 border-2 border-gray-200 rounded-3xl max-w-6xl mx-auto mx-8 z-50">
             {winner.id % 2 === 0 ? (
               <>
                 <div className="flex flex-col justify-center px-7">
