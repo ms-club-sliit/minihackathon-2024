@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Marquee from 'react-fast-marquee';
-import galleryJson from '@/app/data/home/gallery.json';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
+import galleryJson from "@/app/data/home/gallery.json";
 
 export default function Gallery() {
   // Default dimensions
@@ -12,7 +12,7 @@ export default function Gallery() {
   // State to store image dimensions
   const [imageSize, setImageSize] = useState({
     width: defaultWidth,
-    height: defaultHeight
+    height: defaultHeight,
   });
 
   // Function to update image size based on viewport width
@@ -21,10 +21,16 @@ export default function Gallery() {
 
     if (windowWidth < 768) {
       // For mobile view
-      setImageSize({ width: windowWidth * 0.8, height: (windowWidth * 0.8 * defaultHeight) / defaultWidth });
+      setImageSize({
+        width: windowWidth * 0.5,
+        height: (windowWidth * 0.5 * defaultHeight) / defaultWidth,
+      });
     } else if (windowWidth < 1024) {
       // For tablet view
-      setImageSize({ width: windowWidth * 0.6, height: (windowWidth * 0.6 * defaultHeight) / defaultWidth });
+      setImageSize({
+        width: windowWidth * 0.6,
+        height: (windowWidth * 0.6 * defaultHeight) / defaultWidth,
+      });
     } else {
       // For desktop view
       setImageSize({ width: defaultWidth, height: defaultHeight });
@@ -34,16 +40,16 @@ export default function Gallery() {
   // Set initial image size and add resize event listener
   useEffect(() => {
     updateImageSize();
-    window.addEventListener('resize', updateImageSize);
+    window.addEventListener("resize", updateImageSize);
 
     return () => {
-      window.removeEventListener('resize', updateImageSize);
+      window.removeEventListener("resize", updateImageSize);
     };
   }, []);
 
   return (
     <main>
-      <h1 id="gallery" className="text-6xl font-bold text-center">
+      <h1 id="gallery" className="text-3xl lg:text-5xl font-bold text-center">
         Gallery
       </h1>
 
