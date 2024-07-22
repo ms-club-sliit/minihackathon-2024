@@ -64,5 +64,9 @@
 /* End Of Styles for the Vertical Timeline */
 
 .gradient-45 {
-  background: linear-gradient(45deg, #afdeff9c, white);
+  background: linear-gradient(45deg, #afdeff, white);
+}
+
+.gradient-120 {
+  background: linear-gradient(120deg, #afdeff, white);
 }
