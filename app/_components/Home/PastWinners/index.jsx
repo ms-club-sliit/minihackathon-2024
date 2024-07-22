@@ -20,7 +20,7 @@ const PastWinner = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h1 className="italic text-base lg:text-xl mb-3 font-bold text-blue-500">{`Winners of ${winner.year}`}</h1>
+                  <h1 className="italic text-base lg:text-xl mb-3 font-bold text-blue-500">{`${winner.position}`}</h1>
                   <p className="italic text-base lg:text-xl text-justify">{`"${winner.description}"`}</p>
                   <h1 className="text-base lg:text-xl font-bold text-right mt-5">{`-${winner.name}-`}</h1>
                 </div>
@@ -35,7 +35,7 @@ const PastWinner = () => {
                   />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <h1 className="italic text-base lg:text-xl mb-3 font-bold text-blue-500">{`Winners of ${winner.year}`}</h1>
+                  <h1 className="italic text-base lg:text-xl mb-3 font-bold text-blue-500">{`${winner.position}`}</h1>
                   <p className="italic text-base lg:text-xl text-justify">{`"${winner.description}"`}</p>
                   <h1 className="text-base lg:text-xl font-bold text-right mt-5">{`-${winner.name}-`}</h1>
                 </div>

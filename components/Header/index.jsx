@@ -5,10 +5,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const socialMedia = [
-  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "/" },
-  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "/" },
-  { src: "/images/logos/Twitter.png", alt: "Twitter", link: "/" },
-  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "/" },
+  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "https://www.facebook.com/msclubsliit/" },
+  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "https://www.instagram.com/msclub.sliit/" },
+  { src: "/images/logos/youtube.png", alt: "YT", link: "https://www.youtube.com/@msclubofsliit/" },
+  { src: "/images/logos/linkedin.png", alt: "Linkedin", link: "https://www.linkedin.com/company/msclubsliit/" },
+  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "https://github.com/ms-club-sliit/" },
 ];
 
 const navItems = [
@@ -44,8 +45,8 @@ export default function Header() {
           />
         </Link>
         <div className="flex justify-between items-center h-full w-full px-4 md:px-[120px] lg:px-[202px] my-5">
-          <div className="hidden lg:flex">
-            <ul className="flex justify-around gap-12 items-center">
+          <div className="hidden md:flex">
+            <ul className="flex justify-around gap-8 items-center">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -58,7 +59,7 @@ export default function Header() {
               ))}
             </ul>
           </div>
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <Image
               src="/images/icons/menu.png"
               alt="menu"
@@ -68,7 +69,7 @@ export default function Header() {
               onClick={handleNav}
             />
           </div>
-          <div className="flex items-center justify-center">
+          <div className="hidden md:flex items-center justify-center">
             {socialMedia.map((social, index) => (
               <Link href={social.link} key={index}>
                 <Image
@@ -84,10 +85,7 @@ export default function Header() {
         </div>
       </div>
       <div
-        className={`fixed inset-0 p-10 bg-white rounded-lg lg:hidden ease-in duration-500 ${menuOpen
-            ? "m-2 border border-slate-300 shadow-2xl"
-            : "left-[-100%] w-full"
-          }`}
+        className={`fixed inset-0 p-10 bg-white rounded-lg md:hidden ease-in duration-500 ${menuOpen ? "m-2 border border-slate-300 shadow-2xl" : "left-[-100%] w-full"}`}
       >
         <div className="flex w-full items-center justify-start">
           <div

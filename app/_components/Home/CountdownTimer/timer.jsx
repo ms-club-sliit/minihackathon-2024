@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export default function Timer() {
-  const targetDate = new Date("2024-12-01T10:00:00");
+  const targetDate = new Date("2024-07-30T10:00:00");
 
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -90,9 +90,8 @@ export default function Timer() {
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <span
-              className={`text-lg ${
-                isMobile ? "text-base" : "text-2xl"
-              } font-semibold`}
+              className={`text-lg ${isMobile ? "text-base" : "text-2xl"
+                } font-semibold`}
             >
               {value}
             </span>

@@ -1,9 +1,12 @@
 import Image from "next/image";
-import sponsor from "@/app/data/home/sponsors.json";
+// import sponsor from "@/app/data/home/sponsors.json";
 
 // Use transparent sponsor logos for best effect
 // executing code
 const Sponsors = () => {
+
+  const sponsor = []
+
   if (!sponsor) {
     return null;
   }
