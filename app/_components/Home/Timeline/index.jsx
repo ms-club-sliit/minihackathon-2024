@@ -26,7 +26,7 @@ export default function Timeline() {
         <img
           src="images/robot-top.png"
           alt="robot-top"
-          className="h-[97px] min-[744px]:ml-12 lg:mx-auto lg:pl-10 min-[744px]:h-[171px] min-[744px]:w-[241px] min-[1440px]:h-[258px] min-[1440px]:w-[270px]"
+          className="h-[97px] min-[744px]:ml-12 lg:mx-auto lg:pl-10 min-[744px]:h-[171px] min-[744px]:ml-20 min-[1080px]:w-[210px] min-[1080px]:h-[170px] min-[744px]:h-[171px] min-[1440px]:h-[258px] min-[1440px]:w-[270px]"
         />
         <img
           src="images/design-left.png"
