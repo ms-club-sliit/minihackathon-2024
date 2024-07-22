@@ -1,23 +1,23 @@
 {
   "row1": [
     "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png"
+    "/images/gallery/item6.jpg",
+    "/images/gallery/item11.jpg",
+    "/images/gallery/item7.jpg",
+    "/images/gallery/item5.jpg"
   ],
   "row2": [
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png"
+    "/images/gallery/item12.jpg",
+    "/images/gallery/item2.jpg",
+    "/images/gallery/item8.jpg",
+    "/images/gallery/item4.jpg",
+    "/images/gallery/item13.jpg"
   ],
   "row3": [
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png",
-    "/images/gallery/item1.png"
+    "/images/gallery/item9.jpg",
+    "/images/gallery/item14.jpg",
+    "/images/gallery/item3.jpg",
+    "/images/gallery/item15.jpg",
+    "/images/gallery/item10.jpg"
   ]
 }

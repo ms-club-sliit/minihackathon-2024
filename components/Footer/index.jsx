@@ -2,11 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 const socialMedia = [
-  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "/" },
-  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "/" },
-  { src: "/images/logos/Twitter.png", alt: "Twitter", link: "/" },
-  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "/" },
+  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "https://www.facebook.com/msclubsliit/" },
+  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "https://www.instagram.com/msclub.sliit/" },
+  { src: "/images/logos/youtube.png", alt: "YT", link: "https://www.youtube.com/@msclubofsliit/" },
+  { src: "/images/logos/linkedin.png", alt: "Linkedin", link: "https://www.linkedin.com/company/msclubsliit/" },
+  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "https://github.com/ms-club-sliit/" },
 ];
 
 const MSLogs = [
@@ -20,7 +22,7 @@ const MSLogs = [
   {
     src: "/images/logos/FCSCLogo.png",
     alt: "FCSC LOGO",
-    link: "https://msclubsliit.org",
+    link: "https://www.facebook.com/sliit.fcsc",
     width: 120,
     height: 120,
   },
@@ -76,5 +78,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  );
 }
