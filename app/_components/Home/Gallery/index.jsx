@@ -5,33 +5,26 @@ import Marquee from 'react-fast-marquee';
 import galleryJson from '@/app/data/home/gallery.json';
 
 export default function Gallery() {
-  // Default dimensions
   const defaultWidth = 480;
   const defaultHeight = 320;
 
-  // State to store image dimensions
   const [imageSize, setImageSize] = useState({
     width: defaultWidth,
     height: defaultHeight
   });
 
-  // Function to update image size based on viewport width
   const updateImageSize = () => {
     const windowWidth = window.innerWidth;
 
     if (windowWidth < 768) {
-      // For mobile view
       setImageSize({ width: windowWidth * 0.8, height: (windowWidth * 0.8 * defaultHeight) / defaultWidth });
     } else if (windowWidth < 1024) {
-      // For tablet view
       setImageSize({ width: windowWidth * 0.6, height: (windowWidth * 0.6 * defaultHeight) / defaultWidth });
     } else {
-      // For desktop view
       setImageSize({ width: defaultWidth, height: defaultHeight });
     }
   };
 
-  // Set initial image size and add resize event listener
   useEffect(() => {
     updateImageSize();
     window.addEventListener('resize', updateImageSize);
