@@ -14,7 +14,7 @@ export default function Content() {
             <div key={index} className="my-10">
               <h2
                 key={index}
-                className="text-xl lg:text-3xl font-bold text-center lg:text-left uppercase"
+                className="text-xl lg:text-3xl font-bold text-center lg:text-left uppercase mx-10 lg:mx-0"
               >
                 {section.title}
               </h2>

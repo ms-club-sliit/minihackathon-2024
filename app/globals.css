@@ -70,3 +70,7 @@
 .gradient-120 {
   background: linear-gradient(120deg, #afdeff, white);
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
