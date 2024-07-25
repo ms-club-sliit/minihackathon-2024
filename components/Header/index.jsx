@@ -5,11 +5,31 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 const socialMedia = [
-  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "https://www.facebook.com/msclubsliit/" },
-  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "https://www.instagram.com/msclub.sliit/" },
-  { src: "/images/logos/youtube.png", alt: "YT", link: "https://www.youtube.com/@msclubofsliit/" },
-  { src: "/images/logos/linkedin.png", alt: "Linkedin", link: "https://www.linkedin.com/company/msclubsliit/" },
-  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "https://github.com/ms-club-sliit/" },
+  {
+    src: "/images/logos/Facebook.png",
+    alt: "Facebook",
+    link: "https://www.facebook.com/msclubsliit/",
+  },
+  {
+    src: "/images/logos/Instagram.png",
+    alt: "Instagram",
+    link: "https://www.instagram.com/msclub.sliit/",
+  },
+  {
+    src: "/images/logos/youtube.png",
+    alt: "YT",
+    link: "https://www.youtube.com/@msclubofsliit/",
+  },
+  {
+    src: "/images/logos/linkedin.png",
+    alt: "Linkedin",
+    link: "https://www.linkedin.com/company/msclubsliit/",
+  },
+  {
+    src: "/images/logos/GitHub.png",
+    alt: "GitHub",
+    link: "https://github.com/ms-club-sliit/",
+  },
 ];
 
 const navItems = [
@@ -40,11 +60,11 @@ export default function Header() {
             alt="logo-main"
             width={309}
             height={358}
-            className="cursor-pointer mt-4 w-24 sm:w-32 md:w-40 lg:w-80"
+            className="cursor-pointer my-5 w-40 sm:w-32 md:w-40 lg:w-80"
             priority
           />
         </Link>
-        <div className="flex justify-between items-center h-full w-full px-4 md:px-[120px] lg:px-[202px] my-5">
+        <div className="flex justify-between items-center h-full w-full px-4 md:px-[120px] lg:px-[202px] mb-3">
           <div className="hidden md:flex">
             <ul className="flex justify-around gap-8 items-center">
               {navItems.map((item, index) => (
@@ -85,7 +105,11 @@ export default function Header() {
         </div>
       </div>
       <div
-        className={`fixed inset-0 p-10 bg-white rounded-lg md:hidden ease-in duration-500 ${menuOpen ? "m-2 border border-slate-300 shadow-2xl" : "left-[-100%] w-full"}`}
+        className={`fixed inset-0 p-10 bg-white rounded-lg md:hidden ease-in duration-500 ${
+          menuOpen
+            ? "m-2 border border-slate-300 shadow-2xl"
+            : "left-[-100%] w-full"
+        }`}
       >
         <div className="flex w-full items-center justify-start">
           <div
@@ -99,7 +123,11 @@ export default function Header() {
           <ul className="flex flex-col gap-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <Link href={item.link} className="text-lg font-semibold" onClick={closeMenu}>
+                <Link
+                  href={item.link}
+                  className="text-lg font-semibold"
+                  onClick={closeMenu}
+                >
                   {item.name}
                 </Link>
               </li>
