@@ -2,13 +2,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 const socialMedia = [
-  { src: "/images/logos/Facebook.png", alt: "Facebook", link: "https://www.facebook.com/msclubsliit/" },
-  { src: "/images/logos/Instagram.png", alt: "Instagram", link: "https://www.instagram.com/msclub.sliit/" },
-  { src: "/images/logos/youtube.png", alt: "YT", link: "https://www.youtube.com/@msclubofsliit/" },
-  { src: "/images/logos/linkedin.png", alt: "Linkedin", link: "https://www.linkedin.com/company/msclubsliit/" },
-  { src: "/images/logos/GitHub.png", alt: "GitHub", link: "https://github.com/ms-club-sliit/" },
+  {
+    src: "/images/logos/Facebook.png",
+    alt: "Facebook",
+    link: "https://www.facebook.com/msclubsliit/",
+  },
+  {
+    src: "/images/logos/Instagram.png",
+    alt: "Instagram",
+    link: "https://www.instagram.com/msclub.sliit/",
+  },
+  {
+    src: "/images/logos/youtube.png",
+    alt: "YT",
+    link: "https://www.youtube.com/@msclubofsliit/",
+  },
+  {
+    src: "/images/logos/linkedin.png",
+    alt: "Linkedin",
+    link: "https://www.linkedin.com/company/msclubsliit/",
+  },
+  {
+    src: "/images/logos/GitHub.png",
+    alt: "GitHub",
+    link: "https://github.com/ms-club-sliit/",
+  },
 ];
 
 const MSLogs = [
@@ -16,14 +35,14 @@ const MSLogs = [
     src: "/images/logos/MSLogo.png",
     alt: "MS Club Of SLIIT",
     link: "https://msclubsliit.org",
-    width: 120,
+    width: 80,
     height: 120,
   },
   {
     src: "/images/logos/FCSCLogo.png",
     alt: "FCSC LOGO",
     link: "https://www.facebook.com/sliit.fcsc",
-    width: 120,
+    width: 80,
     height: 120,
   },
   {
@@ -55,7 +74,7 @@ export default function Footer() {
           ))}
         </div>
         {/* Copyright text */}
-        <div className="text-center text-sm text-gray-700 mb-4 sm:mb-0">
+        <div className="text-center text-sm text-gray-700 mb-4 sm:mb-0 mx-10 lg:mx-0">
           Copyright &copy; 2024&nbsp;
           <a href="https://msclubsliit.org" className="hover:underline">
             MS Club of SLIIT
@@ -71,7 +90,7 @@ export default function Footer() {
                 alt={social.alt}
                 width={100}
                 height={100}
-                className="cursor-pointer w-6 h-6 sm:w-8 sm:h-8"
+                className="cursor-pointer w-9"
               />
             </Link>
           ))}
