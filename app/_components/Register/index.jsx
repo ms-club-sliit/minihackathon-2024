@@ -38,9 +38,7 @@ const stepItems = [
 ];
 
 const Register = () => {
-  const [current, setCurrent] = useState(5);
-
-
+  const [current, setCurrent] = useState(0);
 
   const setStepData = (step, data) => {
     stepData[step] = data;
@@ -71,8 +69,6 @@ const Register = () => {
         {current == 3 && ( <Step4 stepData={stepData.step4} next={next} setHook= {setStepData} BackHook={prev}/>)}
         {current == 4 && ( <Step5 stepData={stepData.step5} next={next} setHook= {setStepData} BackHook={prev}/>)}
         {current == 5 && ( <Step6 teamData={stepData} next={next} />)}
-
- 
 
         </div>
       </div>
