@@ -11,13 +11,15 @@
   "dependencies": {
     "antd": "^5.20.0",
     "aos": "^3.0.0-beta.6",
+    "firebase": "^10.12.5",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.2.1",
     "react-scroll": "^1.9.0",
-    "react-vertical-timeline-component": "^3.6.0"
+    "react-vertical-timeline-component": "^3.6.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "eslint": "^8",
