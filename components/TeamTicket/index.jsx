@@ -74,12 +74,22 @@ const TeamTicket = (props, this_ref) => {
 		let members = [];
 		for (let i = 1; i <= 4; i++) {
 			let member = props.team[`member0${i}`];
-			
+
 			if (member) members.push({ image: member.imgUrl, name: member.name });
 		}
 
 		return members;
 	}, [props.team]);
+
+	const getCurrentDateString = () => {
+		const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+		return new Intl.DateTimeFormat('en-US', options).format(new Date());
+	};
+
+	const getCurrentTimeString = () => {
+		const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+		return new Intl.DateTimeFormat('en-US', options).format(new Date());
+	};
 
 	return (
 		<div>
@@ -124,16 +134,16 @@ const TeamTicket = (props, this_ref) => {
 								<div className="flex flex-col justify-center items-center mr-[40px]">
 									<img
 										width={190}
-										src="/assets/mini_hackathon_logo.webp"
+										src="/assets/logo-light.png"
 										alt="Mini hackathon logo"
 										className="mb-[8px]"
 									/>
 									<div className="ticket-team-round mb-[28px]">1st Round</div>
 									<div className="ticket-team-date mb-[6px]">
-										Saturday, August 12, 2024
+										{getCurrentDateString()}
 									</div>
 									<div className="ticket-team-time mb-[16px]">
-										10AM IST Online
+										{getCurrentTimeString()}
 									</div>
 									<div className="w-[183px] h-[70px] flex-row justify-center">
 										<div className="team-hosted-by whitespace-nowrap mr-[8px] text-sm mb-2">

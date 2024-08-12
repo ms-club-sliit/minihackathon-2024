@@ -20,13 +20,13 @@ import Share from "../Share";
  */
 
 function TicketPopup({
-	ticketNo,
+    ticketNo,
     isTeam,
-	student,
+    student,
     team,
-	display,
-	onRender,
-	onClose,
+    display,
+    onRender,
+    onClose,
     ticketURL,
     minimal
 }) {
@@ -34,45 +34,44 @@ function TicketPopup({
     const ticketRef = useRef(null);
 
     const getShareURL = (ticketNo, isTeam, title) => {
-        
-    } 
+
+    }
 
     useEffect(() => {
-        if(display){
+        if (display) {
             setTimeout(() => {
                 setOpacity(1)
             }, 500);
-        }else{
+        } else {
             setOpacity(0)
         }
     }, [display]);
 
-    const saveTicket = async() => {
-        if(!ticketRef.current)
+    const saveTicket = async () => {
+        if (!ticketRef.current)
             return;
-        
-        try{
+
+        try {
             let dataURL = await ticketRef.current.renderTicket();
             const link = document.createElement("a");
             link.download = `ticket.png`;
             link.href = dataURL;
             link.click();
-        }catch(e){
-            
+        } catch (e) {
+
         }
     }
 
-	return (
-		<div
-			className={`${minimal ? "" : "z-[9999] fixed w-screen h-screen top-0 left-0 pb-[4em] overflow-y-auto bg-[#000000d9] backdrop-blur-md"} flex flex-col items-center ${
-				display ? "z-[10]" : "z-[-2]"
-			}`}
+    return (
+        <div
+            className={`${minimal ? "" : "z-[9999] fixed w-screen h-screen top-0 left-0 pb-[4em] overflow-y-auto bg-[#000000d9] backdrop-blur-md"} flex flex-col items-center ${display ? "z-[10]" : "z-[-2]"
+                }`}
             style={{
                 opacity: opacity,
                 transition: "opacity 500ms"
             }}
-		>
-			{ !minimal && 
+        >
+            {!minimal &&
                 (
                     <>
                         <h1 className="text-center font-bold text-2xl md:text-4xl mb-[2em] mt-[3em] text-white px-4">
@@ -84,11 +83,11 @@ function TicketPopup({
                             Check your email for more information.
                         </h2>
                     </>
-                    
+
                 )
             }
-			<div>
-				{ isTeam ? 
+            <div>
+                {isTeam ?
                     <TeamTicket
                         headerImage={"/assets/ms_club_logo.png"}
                         title="Mini Hackathon 2024"
@@ -99,8 +98,8 @@ function TicketPopup({
                         onRender={onRender}
                         url={ticketURL}
                         ref={ticketRef}
-                    /> 
-                    : 
+                    />
+                    :
                     <Ticket
                         headerImage={"/assets/ms_club_logo.png"}
                         headerImage2={"/assets/fcsc_logo.png"}
@@ -115,8 +114,8 @@ function TicketPopup({
                         ref={ticketRef}
                     />
                 }
-			</div>
-            <Share url={getShareURL(ticketNo, isTeam ? "team" : "awareness")} title={isTeam ? "I got registered for the Mini Hackathon 2024!" : "I got registered for the Mini Hackathon Awareness Session!"}/>
+            </div>
+            <Share url={getShareURL(ticketNo)} title="I got registered for the Mini Hackathon 2024!" />
             <div className="mt-5">
                 <button
                     onClick={saveTicket}
@@ -125,7 +124,7 @@ function TicketPopup({
                 >
                     Save
                 </button>
-                { !minimal && 
+                {!minimal &&
                     <button
                         onClick={() => onClose && onClose()}
                         type="submit"
@@ -135,8 +134,8 @@ function TicketPopup({
                     </button>
                 }
             </div>
-		</div>
-	);
+        </div>
+    );
 }
 
 export default TicketPopup;
