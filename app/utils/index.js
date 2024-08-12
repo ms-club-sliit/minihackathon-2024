@@ -61,29 +61,29 @@ const registerTeam = async (teamData) => {
     let preProcess = teamData;
 
     Object.keys(preProcess).forEach(step => {
-        if (preProcess[step].hasOwnProperty('img')) {
-          delete preProcess[step].img;
+      if (preProcess[step].hasOwnProperty('img')) {
+        delete preProcess[step].img;
+      }
+
+      Object.keys(preProcess[step]).forEach(key => {
+        if (preProcess[step][key] === undefined) {
+          preProcess[step][key] = null;
         }
-
-        Object.keys(preProcess[step]).forEach(key => {
-          if (preProcess[step][key] === undefined) {
-            preProcess[step][key] = null;
-          }
-        });
-
       });
 
-    
+    });
+
+
     //
     let model = {
       team_name: preProcess.step1.teamname || "",
       team_drive_link: preProcess.step1.link,
       createdAt: new Date().toGMTString(),
 
-      member01: { ...preProcess.step2},
-      member02: { ...preProcess.step3},
-      member03: { ...preProcess.step4},
-      member04: { ...preProcess.step5},
+      member01: { ...preProcess.step2 },
+      member02: { ...preProcess.step3 },
+      member03: { ...preProcess.step4 },
+      member04: { ...preProcess.step5 },
     };
 
     console.log(model);
@@ -91,11 +91,11 @@ const registerTeam = async (teamData) => {
     let documentID = model.team_name.trim();
 
     const docRef = doc(
-      collection(Db,"team_name_2024"),
+      collection(Db, "team_name_2024"),
       documentID
     );
 
-    if(checkTeamExists(documentID)){
+    if (checkTeamExists(documentID)) {
       console.log("Given team name already exists !");
       new Error("Given team name already exists !");
     }
@@ -111,7 +111,7 @@ const registerTeam = async (teamData) => {
 };
 
 const checkTeamExists = async (documentID) => {
-  try { 
+  try {
     const docRef = doc(Db, "team_name_2024", documentID);
 
     const docSnap = await getDoc(docRef);
@@ -137,20 +137,20 @@ const validateFileUpload = (_, value) => {
 };
 
 const validateName = (_, value) => {
-  // if (!value || value.trim() === "") {
-  //   return Promise.reject(new Error("Name is required."));
-  // }
-  // if (value.length < 10) {
-  //   return Promise.reject(
-  //     new Error("Name must be at least 10 characters long.")
-  //   );
-  // }
-  // const namePattern = /^[A-Za-z\s]+$/;
-  // if (!namePattern.test(value)) {
-  //   return Promise.reject(
-  //     new Error("Name must contain only letters and spaces.")
-  //   );
-  // }
+  if (!value || value.trim() === "") {
+    return Promise.reject(new Error("Name is required."));
+  }
+  if (value.length < 10) {
+    return Promise.reject(
+      new Error("Name must be at least 10 characters long.")
+    );
+  }
+  const namePattern = /^[A-Za-z\s]+$/;
+  if (!namePattern.test(value)) {
+    return Promise.reject(
+      new Error("Name must contain only letters and spaces.")
+    );
+  }
   return Promise.resolve();
 };
 
@@ -165,52 +165,52 @@ const validateTeamName = async (_, value) => {
 };
 
 const validateEmail = (_, value) => {
-  // if (!value) {
-  //   return Promise.reject(new Error("Email is required."));
-  // }
-  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // if (!emailPattern.test(value)) {
-  //   return Promise.reject(new Error("Invalid email format."));
-  // }
+  if (!value) {
+    return Promise.reject(new Error("Email is required."));
+  }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(value)) {
+    return Promise.reject(new Error("Invalid email format."));
+  }
   return Promise.resolve();
 };
 
 const validateUniId = (_, value) => {
-  // if (!value) {
-  //   return Promise.reject(new Error("University ID is required."));
-  // }
-  // const uniIdPattern = /^[A-Za-z]{2}\d{8}$/;
-  // if (!uniIdPattern.test(value)) {
-  //   return Promise.reject(
-  //     new Error(
-  //       "SLIIT ID must be exactly 10 characters long, starting with 2 letters followed by 8 numbers."
-  //     )
-  //   );
-  // }
+  if (!value) {
+    return Promise.reject(new Error("University ID is required."));
+  }
+  const uniIdPattern = /^[A-Za-z]{2}\d{8}$/;
+  if (!uniIdPattern.test(value)) {
+    return Promise.reject(
+      new Error(
+        "SLIIT ID must be exactly 10 characters long, starting with 2 letters followed by 8 numbers."
+      )
+    );
+  }
   return Promise.resolve();
 };
 
 const validateContact = (_, value) => {
-  // if (!value) {
-  //   return Promise.reject(new Error("Contact number is required."));
-  // }
-  // const contactPattern = /^\d{10}$/;
-  // if (!contactPattern.test(value)) {
-  //   return Promise.reject(
-  //     new Error("Contact number must be exactly 10 digits.")
-  //   );
-  // }
+  if (!value) {
+    return Promise.reject(new Error("Contact number is required."));
+  }
+  const contactPattern = /^\d{10}$/;
+  if (!contactPattern.test(value)) {
+    return Promise.reject(
+      new Error("Contact number must be exactly 10 digits.")
+    );
+  }
   return Promise.resolve();
 };
 
 const validateURL = (rule, value) => {
-  // if (value) {
-  //   try {
-  //     new URL(value);
-  //   } catch (e) {
-  //     return Promise.reject(new Error("Invalid URL ! Please enter correct URL"));
-  //   }
-  // }
+  if (value) {
+    try {
+      new URL(value);
+    } catch (e) {
+      return Promise.reject(new Error("Invalid URL ! Please enter correct URL"));
+    }
+  }
   return Promise.resolve();
 };
 

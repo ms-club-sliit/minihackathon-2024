@@ -100,6 +100,9 @@ const Step4 = (props) => {
                 label="Member's Contact"
                 name="contact"
                 rules={[{ validator: validateContact }]}
+                onInput={(e) => {
+                  e.target.value = e.target.value.replace(/\D/g, "");
+                }}
               >
                 <Input />
               </Form.Item>
@@ -111,7 +114,7 @@ const Step4 = (props) => {
               <Form.Item
                 label="Member's Email"
                 name="email"
-                rules={[{ validator: validateEmail }]}
+                rules={[{ required: true, validator: validateEmail }]}
               >
                 <Input />
               </Form.Item>
@@ -121,7 +124,7 @@ const Step4 = (props) => {
               <Form.Item
                 label="SLIIT ID"
                 name="uniId"
-                rules={[{ validator: validateUniId }]}
+                rules={[{ required: true, validator: validateUniId }]}
               >
                 <Input />
               </Form.Item>
