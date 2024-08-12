@@ -13,14 +13,42 @@
   },
   {
     "title": "ENTRY PERIOD",
-    "content": "The entry period for the competition starts at 00.01 Colombo Local Time(GMT+5.30) on 21st July 2024 and ends on 28th of July 2024 (\"Entry period\"). Following the entry, selected teams will advance to the preceding rounds.",
+    "content": "The entry period for the competition starts at 00.01 Colombo Local Time(GMT+5.30) on 16th August 2024 and ends on 25th August 2024 (\"Entry period\"). Following the entry, selected teams will advance to the preceding rounds.",
+    "table": {
+      "head": [
+        "Round",
+        "Mode",
+        "Start Date",
+        "End Date"
+      ],
+      "body": [
+        [
+          "Round 1",
+          "Virtual",
+          "16th August 2024",
+          "25th August 2024"
+        ],
+        [
+          "Round 2",
+          "Virtual",
+          "13th September 2024",
+          "16th September 2024"
+        ],
+        [
+          "Round 3",
+          "Virtual",
+          "27th September 2024",
+          "27th September 2024"
+        ]
+      ]
+    },
     "note": "Note: Above dates can be changed based on the situation of the country."
   },
   {
     "title": "ELIGIBILITY",
     "content": "You are eligible to enter if you meet the following requirements below at the time of entry. For purposes of this Competition, \"time of entry\" is defined as the most recent date you have submitted an entry into a specific round.",
     "list": [
-      "You are at least 16 years of age as of 21st July 2024 and are actively enrolled as a student following an undergraduate degree program at Srilanka Institute of Information Technology.",
+      "You are at least 16 years of age as of 16th August 2024 and are actively enrolled as a student following an undergraduate degree program at Srilanka Institute of Information Technology.",
       "You have not used paid employee's assistance in creating the mini hackathon entry deliverables.",
       "You are not actively enrolled in any administration role of this competition.",
       "You have not utilized any other competitors IPOs without their permission.",
@@ -54,7 +82,159 @@
       {
         "title": "Round 1 (Virtual)",
         "content": [
-          "The MiniHackathon competition gives students a chance to pitch their technology project and provide a project plan to be screened and evaluated by a panel of judges. The submission must be performed with the following deliverables."
+          "The MiniHackathon competition gives students a chance to pitch their technology project and provide a project plan to be screened and evaluated by a panel of judges. In round 1 there are following competition categories to compete as,"
+        ],
+        "categories": [
+          {
+            "name": "Internet of Things (IoT) Solutions",
+            "content": [
+              "Smart home automation",
+              "Environmental monitoring",
+              "Connected healthcare devices",
+              "Industrial IoT applications",
+              "Wearable technology"
+            ]
+          },
+          {
+            "name": "Artificial Intelligence (AI) and Machine Learning (ML)",
+            "content": [
+              "Natural language processing applications",
+              "Computer vision and image recognition",
+              "Predictive analytics and data-driven solutions",
+              "Chatbots and virtual assistants",
+              "AI-powered automation"
+            ]
+          },
+          {
+            "name": "Blockchain and Decentralized Applications",
+            "content": [
+              "Supply chain transparency and traceability",
+              "Digital identity and authentication systems",
+              "Smart contracts and decentralized finance (DeFi)",
+              "Voting and governance solutions",
+              "Asset tokenization"
+            ]
+          },
+          {
+            "name": "Augmented Reality (AR) and Virtual Reality (VR)",
+            "content": [
+              "Immersive gaming experience",
+              "Virtual training and simulations",
+              "AR/VR for education and remote collaboration",
+              "Virtual tours and 360-degree experiences",
+              "AR/VR for marketing and advertising"
+            ]
+          },
+          {
+            "name": "Fintech and Payment Solutions",
+            "content": [
+              "Peer-to-peer payment platforms",
+              "Budgeting and personal finance management",
+              "Micro-investing and wealth management",
+              "Financial literacy and education tools",
+              "Open banking and financial APIs"
+            ]
+          },
+          {
+            "name": "E-commerce and Retail Innovations",
+            "content": [
+              "Personalized shopping experiences",
+              "Augmented reality product visualization",
+              "Inventory management and logistics optimization",
+              "Social commerce and influencer marketing",
+              "Customer engagement and loyalty solutions"
+            ]
+          },
+          {
+            "name": "Health and Wellness Technologies",
+            "content": [
+              "Fitness tracking and personalized health apps",
+              "Mental health and well-being support",
+              "Remote patient monitoring and telehealth",
+              "Health data analytics and insights",
+              "AI-assisted diagnostics and disease prevention"
+            ]
+          },
+          {
+            "name": "Urban Planning and Design",
+            "content": [
+              "Sustainable city development",
+              "Smart infrastructure solutions",
+              "Public space design and management",
+              "Transportation systems optimization",
+              "Urban regeneration projects"
+            ]
+          },
+          {
+            "name": "Social Entrepreneurship and Impact Investing",
+            "content": [
+              "Innovative business models for social good",
+              "Impact measurement and reporting",
+              "Sustainable supply chain solutions",
+              "Access to essential services in underserved areas",
+              "Microfinance and financial inclusion"
+            ]
+          },
+          {
+            "name": "Digital Ethics and Privacy",
+            "content": [
+              "Data privacy regulations and frameworks",
+              "Ethical considerations in AI and automation",
+              "Algorithmic transparency and accountability",
+              "Digital rights and user empowerment",
+              "Privacy-preserving technologies"
+            ]
+          },
+          {
+            "name": "Future of Work",
+            "content": [
+              "Remote work and digital nomadism",
+              "Gig economy and freelancing platforms",
+              "Upskilling and reskilling initiatives",
+              "Work-life balance and well-being",
+              "Collaboration tools and virtual teams"
+            ]
+          },
+          {
+            "name": "Sustainable Fashion and Textiles",
+            "content": [
+              "Circular fashion models",
+              "Ethical sourcing and supply chains",
+              "Textile recycling and upcycling",
+              "Slow fashion and conscious consumerism",
+              "Innovation in sustainable materials"
+            ]
+          },
+          {
+            "name": "Renewable Technologies for Rural Areas",
+            "content": [
+              "Off-grid renewable energy solutions",
+              "Clean cooking technologies",
+              "Water purification and sanitation systems",
+              "Agricultural innovations for rural communities",
+              "Digital connectivity and access to information"
+            ]
+          },
+          {
+            "name": "Disaster Preparedness and Resilience",
+            "content": [
+              "Early warning systems for natural disasters",
+              "Community-based disaster response initiatives",
+              "Resilient infrastructure and building design",
+              "Climate risk assessment and adaptation strategies",
+              "Disaster recovery and post-disaster rebuilding efforts"
+            ]
+          },
+          {
+            "name": "Applications related to Cyber Security",
+            "content": [
+              "Early warning systems for cyber threats",
+              "Community-based cyber security initiatives",
+              "Resilient infrastructure and security design",
+              "Risk assessment and adaptation strategies",
+              "Disaster recovery and post-cyber-attack rebuilding efforts"
+            ]
+          }
         ],
         "list": [
           "Project Proposal: This should be a Microsoft word document or a PDF document no longer than 10 pages(Excluding the report format such as table of content and figure panels) which explains your project and what is the solution that your team is trying to tackle, who your project is for and how you will you bring your project to the market from a technological standpoint.",
@@ -66,7 +246,7 @@
         "advancement": {
           "title": "Round 1 Advancement:",
           "content": "All the submissions will be evaluated by Microsoft gold ambassadors and will be marked according to the criteria provided.",
-          "note": "Top 30 teams spanning across all criteria with the highest cumulative mark will be advancing to the next round."
+          "note": "Top 20 teams spanning across all criteria with the highest cumulative mark will be advancing to the next round."
         }
       },
       {
@@ -174,5 +354,61 @@
       "That the decision of the organizing committee and the panel of judges is final.(We try to be as transparent as possible with the results).",
       "To not engage in any form of harassment towards the fellow participants or the organizing committee."
     ]
+  },
+  {
+    "title": "Marking Criteria ( Round 2 and Final Round )",
+    "content": "The marking criteria for the competition is as follows.",
+    "nestedTable": {
+      "head": [
+        "Criteria",
+        "Description"
+      ],
+      "body": [
+        {
+          "criteria": "Technology",
+          "description": [
+            "The effective utilization of innovative technologies where appropriate",
+            "Proficiency in software design and proof that it could be implemented using the currently existing technologies",
+            "Were there significant platform features the project could benefit and could have utilized",
+            "Innovation in user experience"
+          ]
+        },
+        {
+          "criteria": "Innovation",
+          "description": [
+            "Does the project create new category of products or services?",
+            "Does the project clearly and meaningfully innovate beyond existing products?",
+            "Does this address the provided issue at hand?"
+          ]
+        },
+        {
+          "criteria": "Concept",
+          "description": [
+            "Does this have a clear targeted audience?",
+            "Opportunity and the lack of a solution in the domain is clearly identified",
+            "Projects purpose is easily understood"
+          ]
+        },
+        {
+          "criteria": "Feasibility",
+          "description": [
+            "Does the proposed solution feasible?",
+            "Does the team have a credible plan for getting their project to market in terms of business model?"
+          ]
+        },
+        {
+          "criteria": "Presentation",
+          "description": [
+            "Is the presentation properly structured and demonstrates the solution thoroughly?"
+          ]
+        },
+        {
+          "criteria": "Prototyping",
+          "description": [
+            "Does the prototype thoroughly demonstrate the proposed solution and addresses the given criteria?"
+          ]
+        }
+      ]
+    }
   }
 ]
