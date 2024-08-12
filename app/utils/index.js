@@ -99,9 +99,11 @@ const registerTeam = async (teamData) => {
       console.log("Given team name already exists !");
       new Error("Given team name already exists !");
     }
+
     await setDoc(docRef, model);
     console.log("Team registered successfully!");
 
+    return [model, docRef];
   } catch (error) {
     console.error("Error saving data: ", error);
     new Error("Team registration failed");
@@ -128,87 +130,87 @@ const checkTeamExists = async (documentID) => {
 
 
 const validateFileUpload = (_, value) => {
-  if (!value || value.length === 0) {
-    return Promise.reject(new Error("Please upload a profile image."));
-  }
+  // if (!value || value.length === 0) {
+  //   return Promise.reject(new Error("Please upload a profile image."));
+  // }
   return Promise.resolve();
 };
 
 const validateName = (_, value) => {
-  if (!value || value.trim() === "") {
-    return Promise.reject(new Error("Name is required."));
-  }
-  if (value.length < 10) {
-    return Promise.reject(
-      new Error("Name must be at least 10 characters long.")
-    );
-  }
-  const namePattern = /^[A-Za-z\s]+$/;
-  if (!namePattern.test(value)) {
-    return Promise.reject(
-      new Error("Name must contain only letters and spaces.")
-    );
-  }
+  // if (!value || value.trim() === "") {
+  //   return Promise.reject(new Error("Name is required."));
+  // }
+  // if (value.length < 10) {
+  //   return Promise.reject(
+  //     new Error("Name must be at least 10 characters long.")
+  //   );
+  // }
+  // const namePattern = /^[A-Za-z\s]+$/;
+  // if (!namePattern.test(value)) {
+  //   return Promise.reject(
+  //     new Error("Name must contain only letters and spaces.")
+  //   );
+  // }
   return Promise.resolve();
 };
 
 const validateTeamName = async (_, value) => {
-  if (value) {
-    const exists = await checkTeamExists(value.trim());
-    if (exists) {
-      return Promise.reject(new Error("Team name already exists!"));
-    }
-  }
+  // if (value) {
+  //   const exists = await checkTeamExists(value.trim());
+  //   if (exists) {
+  //     return Promise.reject(new Error("Team name already exists!"));
+  //   }
+  // }
   return Promise.resolve();
 };
 
 const validateEmail = (_, value) => {
-  if (!value) {
-    return Promise.reject(new Error("Email is required."));
-  }
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(value)) {
-    return Promise.reject(new Error("Invalid email format."));
-  }
+  // if (!value) {
+  //   return Promise.reject(new Error("Email is required."));
+  // }
+  // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // if (!emailPattern.test(value)) {
+  //   return Promise.reject(new Error("Invalid email format."));
+  // }
   return Promise.resolve();
 };
 
 const validateUniId = (_, value) => {
-  if (!value) {
-    return Promise.reject(new Error("University ID is required."));
-  }
-  const uniIdPattern = /^[A-Za-z]{2}\d{8}$/;
-  if (!uniIdPattern.test(value)) {
-    return Promise.reject(
-      new Error(
-        "SLIIT ID must be exactly 10 characters long, starting with 2 letters followed by 8 numbers."
-      )
-    );
-  }
+  // if (!value) {
+  //   return Promise.reject(new Error("University ID is required."));
+  // }
+  // const uniIdPattern = /^[A-Za-z]{2}\d{8}$/;
+  // if (!uniIdPattern.test(value)) {
+  //   return Promise.reject(
+  //     new Error(
+  //       "SLIIT ID must be exactly 10 characters long, starting with 2 letters followed by 8 numbers."
+  //     )
+  //   );
+  // }
   return Promise.resolve();
 };
 
 const validateContact = (_, value) => {
-  if (!value) {
-    return Promise.reject(new Error("Contact number is required."));
-  }
-  const contactPattern = /^\d{10}$/;
-  if (!contactPattern.test(value)) {
-    return Promise.reject(
-      new Error("Contact number must be exactly 10 digits.")
-    );
-  }
+  // if (!value) {
+  //   return Promise.reject(new Error("Contact number is required."));
+  // }
+  // const contactPattern = /^\d{10}$/;
+  // if (!contactPattern.test(value)) {
+  //   return Promise.reject(
+  //     new Error("Contact number must be exactly 10 digits.")
+  //   );
+  // }
   return Promise.resolve();
 };
 
 const validateURL = (rule, value) => {
-  if (value) {
-    try {
-      new URL(value);
-    } catch (e) {
-      return Promise.reject(new Error("Invalid URL ! Please enter correct URL"));
-    }
-  }
+  // if (value) {
+  //   try {
+  //     new URL(value);
+  //   } catch (e) {
+  //     return Promise.reject(new Error("Invalid URL ! Please enter correct URL"));
+  //   }
+  // }
   return Promise.resolve();
 };
 
