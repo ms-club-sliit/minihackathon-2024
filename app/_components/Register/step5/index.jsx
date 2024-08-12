@@ -1,6 +1,6 @@
 "use client";
 import { React, useState, useEffect } from "react";
-import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
+import { InboxOutlined } from "@ant-design/icons";
 import { Button, Select, Form, Input, Space, Col, Row, Upload } from "antd";
 
 import {
@@ -13,13 +13,6 @@ import {
 } from "@/app/utils";
 
 const { Option } = Select;
-
-const tailLayout = {
-  wrapperCol: {
-    offset: 3,
-    span: 12,
-  },
-};
 
 const normFile = (e) => {
   console.log("Upload event:", e);
@@ -54,7 +47,7 @@ const Step5 = (props) => {
   }, [form, props.stepData]);
 
   const uploadHandleWrapper = ({ file, onSuccess, onError, onProgress }) => {
-    const setImageUrL = (url) => {
+    const setImageUrl = (url) => {
       props.stepData.imgUrl = url;
     };
 
@@ -64,7 +57,7 @@ const Step5 = (props) => {
       onError,
       onProgress,
       setFileList,
-      setImageUrL
+      setImageUrl
     );
   };
 
@@ -90,32 +83,23 @@ const Step5 = (props) => {
   };
 
   return (
-    <div>
-      <div className="body">
+    <div className="p-4 sm:p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto">
         <Form
           size="large"
           name="basic"
           form={form}
           labelAlign="left"
-          labelCol={{
-            span: 6,
-          }}
-          style={{
-            maxWidth: 1200,
-          }}
-          wrapperCol={{
-            span: 12,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          form={form}
+          labelCol={{ span: 24 }}
+          wrapperCol={{ span: 24 }}
+          style={{ maxWidth: '100%' }}
+          initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
-          <Row gutter={0}>
-            <Col span={12}>
+          <Row gutter={16}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Member Name"
                 name="name"
@@ -125,7 +109,7 @@ const Step5 = (props) => {
               </Form.Item>
             </Col>
 
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Member's Contact"
                 name="contact"
@@ -136,8 +120,8 @@ const Step5 = (props) => {
             </Col>
           </Row>
 
-          <Row gutter={0}>
-            <Col span={12}>
+          <Row gutter={16}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="Member's Email"
                 name="email"
@@ -147,7 +131,7 @@ const Step5 = (props) => {
               </Form.Item>
             </Col>
 
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 label="SLIIT ID"
                 name="uniId"
@@ -158,68 +142,42 @@ const Step5 = (props) => {
             </Col>
           </Row>
 
-          <Row gutter={0}>
-            <Col span={12}>
+          <Row gutter={16}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 name="faculty"
                 label="SLIIT Faculty"
                 hasFeedback
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select your Faculty!",
-                  },
-                ]}
+                rules={[{ required: true, message: "Please select your Faculty!" }]}
               >
                 <Select placeholder="Please select a faculty">
-                  <Option value="Faculty of Computing">
-                    Faculty of Computing
-                  </Option>
-                  <Option value="Faculty of Engineering">
-                    Faculty of Engineering
-                  </Option>
-                  <Option value="Faculty of Business">
-                    Faculty of Business
-                  </Option>
+                  <Option value="Faculty of Computing">Faculty of Computing</Option>
+                  <Option value="Faculty of Engineering">Faculty of Engineering</Option>
+                  <Option value="Faculty of Business">Faculty of Business</Option>
                 </Select>
               </Form.Item>
             </Col>
 
-            <Col span={12}>
+            <Col xs={24} sm={12}>
               <Form.Item
                 name="academicYear"
-                label=" Academic Year"
+                label="Academic Year"
                 hasFeedback
-                rules={[
-                  {
-                    required: true,
-                    message: "Please select your current academic year!",
-                  },
-                ]}
+                rules={[{ required: true, message: "Please select your current academic year!" }]}
               >
-                <Select placeholder="Please select a avademic year">
-                  <Option value="Year 01 Semester 01">
-                    Year 01 Semester 01
-                  </Option>
-                  <Option value="Year 01 Semester 02">
-                    Year 01 Semester 02
-                  </Option>
-                  <Option value="Year 02 Semester 01">
-                    Year 02 Semester 01
-                  </Option>
-                  <Option value="Year 02 Semester 02">
-                    Year 02 Semester 02
-                  </Option>
-                  <Option value="Year 03 Semester 01">
-                    Year 03 Semester 01
-                  </Option>
+                <Select placeholder="Please select an academic year">
+                  <Option value="Year 01 Semester 01">Year 01 Semester 01</Option>
+                  <Option value="Year 01 Semester 02">Year 01 Semester 02</Option>
+                  <Option value="Year 02 Semester 01">Year 02 Semester 01</Option>
+                  <Option value="Year 02 Semester 02">Year 02 Semester 02</Option>
+                  <Option value="Year 03 Semester 01">Year 03 Semester 01</Option>
                 </Select>
               </Form.Item>
             </Col>
           </Row>
 
-          <Row gutter={0}>
-            <Col span={12}>
+          <Row gutter={16}>
+            <Col xs={24}>
               <Form.Item label="Upload Image">
                 <Form.Item
                   name="dragger"
@@ -247,28 +205,32 @@ const Step5 = (props) => {
             </Col>
           </Row>
 
-          <Form.Item {...tailLayout}>
-            <Space>
-              <Button type="primary" htmlType="submit">
-                Next
-              </Button>
-              <Button
-                htmlType="button"
-                onClick={() => {
-                  props.BackHook();
-                }}
-              >
-                Previous
-              </Button>
-              <Button
-                type="primary"
-                htmlType="button"
-                onClick={() => {
-                  props.next();
-                }}
-              >
-                Skip and Register
-              </Button>
+          <Form.Item>
+            <Space direction="vertical" size="middle" className="w-full">
+              <Row gutter={12} justify="center">
+                <Col>
+                  <Button
+                    htmlType="button"
+                    onClick={() => props.BackHook()}
+                  >
+                    Previous
+                  </Button>
+                </Col>
+                <Col>
+                  <Button type="primary" htmlType="submit">
+                    Next
+                  </Button>
+                </Col>
+                <Col className="mt-2 lg:mt-0">
+                  <Button
+                    type="primary"
+                    htmlType="button"
+                    onClick={() => props.next()}
+                  >
+                    Skip and Register
+                  </Button>
+                </Col>
+              </Row>
             </Space>
           </Form.Item>
         </Form>

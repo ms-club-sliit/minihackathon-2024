@@ -1,9 +1,6 @@
 "use client";
-import { React, useState, useEffect } from "react";
-import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
-import { Button, Select, Form, Input, Space, Col, Row, Upload } from "antd";
-import { SmileOutlined } from "@ant-design/icons";
-import { notification } from "antd";
+import { React, useEffect } from "react";
+import { notification, Spin } from "antd";
 
 import { registerTeam } from "@/app/utils";
 
@@ -14,20 +11,6 @@ const step6 = (props) => {
     api[type]({
       message: error,
       description: description,
-    });
-  };
-
-  const sendMail = async (email) => {
-    await fetch("https://minihackathon-smtp.azurewebsites.net/api/sendmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        body: "test body",
-        subject: "Testing",
-      }),
     });
   };
 
@@ -46,7 +29,7 @@ const step6 = (props) => {
           "error",
           "Registration failed",
           "Kindly contact Minihackathon 2024 organizing committee and share this traceback message: " +
-            error
+          error
         );
       }
     };
@@ -57,6 +40,9 @@ const step6 = (props) => {
   return (
     <main>
       <div className="my-20">{contextHolder}</div>
+      <div className="flex justify-center items-center h-screen">
+        Processing... &nbsp; <Spin size="large" />
+      </div>
     </main>
   );
 };
