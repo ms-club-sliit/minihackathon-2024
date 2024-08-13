@@ -130,9 +130,9 @@ const checkTeamExists = async (documentID) => {
 
 
 const validateFileUpload = (_, value) => {
-  // if (!value || value.length === 0) {
-  //   return Promise.reject(new Error("Please upload a profile image."));
-  // }
+  if (!value || value.length === 0) {
+    return Promise.reject(new Error("Please upload a profile image."));
+  }
   return Promise.resolve();
 };
 
@@ -155,12 +155,12 @@ const validateName = (_, value) => {
 };
 
 const validateTeamName = async (_, value) => {
-  // if (value) {
-  //   const exists = await checkTeamExists(value.trim());
-  //   if (exists) {
-  //     return Promise.reject(new Error("Team name already exists!"));
-  //   }
-  // }
+  if (value) {
+    const exists = await checkTeamExists(value.trim());
+    if (exists) {
+      return Promise.reject(new Error("Team name already exists!"));
+    }
+  }
   return Promise.resolve();
 };
 
