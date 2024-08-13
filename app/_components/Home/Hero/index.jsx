@@ -14,8 +14,8 @@ export default function Home() {
               IT&apos;S HACKATHON TIME!
             </h2>
             <div className="py-2 lg:py-5">
-              <h1 className="text-3xl lg:text-6xl font-bold">ARE YOU READY?</h1>
-              <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px]">
+              <h1 className="text-3xl lg:text-6xl font-bold text-left">ARE YOU READY?</h1>
+              <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px] text-left">
                 Showcase your creativity and technical skills In our tech
                 competition!
               </p>
