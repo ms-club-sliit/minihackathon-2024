@@ -14,19 +14,19 @@ export default function Home() {
               IT&apos;S HACKATHON TIME!
             </h2>
             <div className="py-2 lg:py-5">
-              <h1 className="text-3xl lg:text-6xl font-bold">ARE YOU READY?</h1>
-              <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px]">
+              <h1 className="text-3xl lg:text-6xl font-bold text-left">ARE YOU READY?</h1>
+              <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px] text-left">
                 Showcase your creativity and technical skills In our tech
                 competition!
               </p>
             </div>
           </div>
           <div className="flex flex-col lg:flex-row items-start my-2 gap-3 lg:gap-5">
-            <a href="/register">
+            {/* <a href="/register">
               <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold">
                 Register
               </button>
-            </a>
+            </a> */}
             <a href="/rules">
               <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 flex items-center text-blue-500 bg-white rounded-lg lg:rounded-xl hover:bg-blue-700 hover:text-white font-bold">
                 Full Instructions
