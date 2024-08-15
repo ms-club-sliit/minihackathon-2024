@@ -164,7 +164,7 @@ const Step2 = (props) => {
             </Col>
           </Row>
 
-          <Row gutter={16}>
+          {/* <Row gutter={16}>
             <Col xs={24}>
               <Form.Item label="Upload Image">
                 <Form.Item
@@ -191,7 +191,7 @@ const Step2 = (props) => {
                 </Form.Item>
               </Form.Item>
             </Col>
-          </Row>
+          </Row> */}
 
           <Form.Item>
             <Space direction="vertical" size="middle" className="w-full">

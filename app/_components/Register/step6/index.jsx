@@ -41,7 +41,7 @@ const step6 = (props) => {
     <main>
       <div className="my-20">{contextHolder}</div>
       <div className="flex justify-center items-center h-screen">
-        Processing... &nbsp; <Spin size="large" />
+        Generating Registration Ticket ... &nbsp; <Spin size="large" />
       </div>
     </main>
   );
