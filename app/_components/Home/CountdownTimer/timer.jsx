@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export default function Timer() {
-  const targetDate = new Date("2024-08-15T19:30:00");
+  const targetDate = new Date("2024-08-26T00:00:00");
 
   const calculateTimeLeft = () => {
     const now = new Date();
