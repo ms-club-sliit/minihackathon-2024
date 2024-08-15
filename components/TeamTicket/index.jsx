@@ -112,8 +112,9 @@ const TeamTicket = (props, this_ref) => {
 										</div>
 									</div>
 
-									{getMembers().map((member, index) => {
-										return (
+									{getMembers()
+										.filter(member => member.name) // Filter out members with an empty or undefined name
+										.map((member, index) => (
 											<div
 												key={index}
 												className="flex flex-row items-center mb-[14px]"
@@ -127,8 +128,7 @@ const TeamTicket = (props, this_ref) => {
 													{member.name}
 												</div>
 											</div>
-										);
-									})}
+										))}
 								</div>
 								<div className="flex-grow"></div>
 								<div className="flex flex-col justify-center items-center mr-[40px]">
