@@ -115,7 +115,7 @@ function TicketPopup({
                     />
                 }
             </div>
-            <Share url={getShareURL(ticketNo)} title="I got registered for the Mini Hackathon 2024!" />
+            {/* <Share url={getShareURL(ticketNo)} title="I got registered for the Mini Hackathon 2024!" /> */}
             <div className="mt-5">
                 <button
                     onClick={saveTicket}

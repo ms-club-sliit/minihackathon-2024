@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import HackathonImage from "../../../../public/images/AIBot.png";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="container mx-auto text-justify text-[#161414] px-10 lg:px-0">
       <div className="relative w-full h-auto flex flex-row px-10 justify-left items-center lg:justify-center gradient-120 rounded-[20px] lg:rounded-[50px] my-10 lg:my-20 py-10">
@@ -22,17 +25,19 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col lg:flex-row items-start my-2 gap-3 lg:gap-5">
-            {/* <a href="/register">
-              <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold">
-                Register
-              </button>
-            </a> */}
-            <a href="/rules">
-              <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 flex items-center text-blue-500 bg-white rounded-lg lg:rounded-xl hover:bg-blue-700 hover:text-white font-bold">
-                Full Instructions
-                <span className="material-symbols-outlined">chevron_right</span>
-              </button>
-            </a>
+            <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold"
+              onClick={() => {
+                router.push('/register');
+              }}>
+              Register
+            </button>
+            <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 flex items-center text-blue-500 bg-white rounded-lg lg:rounded-xl hover:bg-blue-700 hover:text-white font-bold"
+              onClick={() => {
+                router.push('/rules');
+              }}>
+              Full Instructions
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
           </div>
         </div>
         <div className="absolute lg:static right-5 bottom-1">
@@ -43,6 +48,6 @@ export default function Home() {
           />
         </div>
       </div>
-    </div>
+    </div >
   );
 }

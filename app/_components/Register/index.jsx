@@ -114,6 +114,49 @@ const Register = () => {
 
   const onClose = () => {
     setTicketData((prev) => ({ ...prev, display: false }));
+    stepData = {
+      step1: { teamName: null, link: null },
+      step2: {
+        name: null,
+        email: null,
+        contact: null,
+        uniID: null,
+        academicYear: null,
+        faculty: null,
+        img: null,
+        imgUrl: null,
+      },
+      step3: {
+        name: null,
+        email: null,
+        contact: null,
+        uniID: null,
+        academicYear: null,
+        faculty: null,
+        img: null,
+        imgUrl: null,
+      },
+      step4: {
+        name: null,
+        email: null,
+        contact: null,
+        uniID: null,
+        academicYear: null,
+        faculty: null,
+        img: null,
+        imgUrl: null,
+      },
+      step5: {
+        name: null,
+        email: null,
+        contact: null,
+        uniID: null,
+        academicYear: null,
+        faculty: null,
+        img: null,
+        imgUrl: null,
+      },
+    };
     router.push('/');
   };
 
