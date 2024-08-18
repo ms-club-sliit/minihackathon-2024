@@ -1,5 +1,5 @@
 export default function Eligibility() {
-  const url = "https://teams.microsoft.com/l/message/19:4f089d55432e44b7b05e71c61a7b9bf8@thread.v2/1723704794568?context=%7B%22contextType%22%3A%22chat%22%7D";
+  const url = "https://teams.microsoft.com/l/channel/19%3Aef3216a7c6c5411a98ab4d315fed5b2b%40thread.tacv2/Q%20and%20A%20(Support)?groupId=998fb544-0059-40f6-a1b3-c4c2f2768078&tenantId=";
   return (
     <main
       id="eligibility"
