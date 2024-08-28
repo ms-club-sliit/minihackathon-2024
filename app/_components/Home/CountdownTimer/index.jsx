@@ -11,7 +11,7 @@ export default function CountdownTimer() {
           Round 1 Registrations
         </h2>
         <h2 className="text-3xl lg:text-5xl font-semibold mt-2">
-          Happening Now!
+          Closed in!
         </h2>
       </div>
       <div className="row my-5 w-full h-auto">
