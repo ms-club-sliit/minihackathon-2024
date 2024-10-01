@@ -1,44 +1,44 @@
 [
-  {
-    "index": 1,
-    "date": "13th of August - 10.00 AM",
-    "title": "Registration Open for Awareness Session",
-    "position": "right",
-    "description": "Being aware of the competition will help you create a remarkable project adhering to the rules and guidelines of the competition. The best way to do so is by attending the awareness session. Now you can get registered for the awareness session."
-  },
-  {
-    "index": 2,
-    "date": "15th of August - 7:30 PM",
-    "title": "Awareness Session",
-    "position": "left",
-    "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
-  },
-  {
-    "index": 3,
-    "date": "15th of August - 12.00 AM",
-    "title": "Team Registration Open",
-    "position": "right",
-    "description": "Registrations for round one start. Get your team registered on time by submitting an entry. Make sure that your team consist of 3 to 4 members. Keep in mind that a good team will help you win championships."
-  },
-  {
-    "index": 4,
-    "date": "13th of September - 11.59 PM",
-    "title": "Registration Closes",
-    "position": "left",
-    "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
-  },
-  {
-    "index": 5,
-    "date": "18th of September - 10.00 AM",
-    "title": "Round 2 - Live Presentation",
-    "position": "right",
-    "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
-  },
-  {
-    "index": 6,
-    "date": "27th of September - 7:30 AM",
-    "title": "Final Round",
-    "position": "left",
-    "description": "All teams advancing to round 3 are invited to the physical event at the Sri Lanka Institute of Information Technology Campus, Malabe, to present the project in front of an expert panel. Winners will be selected accordingly."
-  }
+    {
+        "index": 1,
+        "date": "13th of August - 10.00 AM",
+        "title": "Registration Open for Awareness Session",
+        "position": "right",
+        "description": "Being aware of the competition will help you create a remarkable project adhering to the rules and guidelines of the competition. The best way to do so is by attending the awareness session. Now you can get registered for the awareness session."
+    },
+    {
+        "index": 2,
+        "date": "15th of August - 7:30 PM",
+        "title": "Awareness Session",
+        "position": "left",
+        "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
+    },
+    {
+        "index": 3,
+        "date": "15th of August - 12.00 AM",
+        "title": "Team Registration Open",
+        "position": "right",
+        "description": "Registrations for round one start. Get your team registered on time by submitting an entry. Make sure that your team consist of 3 to 4 members. Keep in mind that a good team will help you win championships."
+    },
+    {
+        "index": 4,
+        "date": "13th of September - 11.59 PM",
+        "title": "Registration Closes",
+        "position": "left",
+        "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
+    },
+    {
+        "index": 5,
+        "date": "08th of October - 10.00 AM",
+        "title": "Round 2 - Live Presentation",
+        "position": "right",
+        "description": "Team registration closes on this day. Please note that NO registration is accepted after the registrations are closed. Be sure to get registered before the deadline ends."
+    },
+    {
+        "index": 6,
+        "date": "11th of October - 8:30 AM",
+        "title": "Final Round",
+        "position": "left",
+        "description": "All teams advancing to round 3 are invited to the physical event at the Sri Lanka Institute of Information Technology Campus, Malabe, to present the project in front of an expert panel. Winners will be selected accordingly."
+    }
 ]
