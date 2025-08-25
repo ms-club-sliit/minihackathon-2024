@@ -27,7 +27,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col lg:flex-row items-start my-2 gap-3 lg:gap-5">
-            {/* <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold"
+            <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold"
               onClick={() => {
                 router.push('/register');
               }}>
@@ -39,7 +39,7 @@ export default function Home() {
               }}>
               Full Instructions
               <span className="material-symbols-outlined">chevron_right</span>
-            </button> */}
+            </button>
 
             <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px] text-left">
               Registration for the competition is now closed. Thank you to

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.14",
     "antd": "^5.20.0",
@@ -25,6 +26,7 @@
     "react-scroll": "^1.9.0",
     "react-share": "^5.1.0",
     "react-vertical-timeline-component": "^3.6.0",
+    "resend": "^6.0.1",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

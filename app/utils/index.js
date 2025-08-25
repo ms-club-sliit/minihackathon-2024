@@ -1,7 +1,4 @@
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { Storage, Db } from "../firebase";
-import { doc, setDoc, getDoc, collection } from "firebase/firestore";
-
+import { supabase } from '../supabase';
 import { v4 as uuidv4 } from "uuid";
 
 const handleUpload = async (
@@ -14,41 +11,44 @@ const handleUpload = async (
 ) => {
   if (!file) return;
 
-  const storageRef = ref(
-    Storage,
-    `profile-image-uploads/${uuidv4() + "_" + file.name}`
-  );
-  const uploadTask = uploadBytesResumable(storageRef, file);
+  const fileExt = file.name.split('.').pop();
+  const fileName = `${uuidv4()}.${fileExt}`;
+  const filePath = `profile-image-uploads/${fileName}`;
 
-  uploadTask.on(
-    "state_changed",
-    (snapshot) => {
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log(`Upload is ${progress}% done`);
-      onProgress({ percent: progress });
-    },
-    (error) => {
-      message.error(`Upload failed: ${error.message}`);
-      onError(error);
-    },
-    () => {
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log("File available at", downloadURL);
-        downloadLinkHook(downloadURL);
-        onSuccess("Ok");
-        setFileList((prevFileList) =>
-          prevFileList.map((item) => {
-            return {
-              ...item,
-              status: "done",
-              url: downloadURL,
-              thumbUrl: downloadURL,
-            };
-          })
-        );
+  try {
+    onProgress({ percent: 0 });
+
+    const { data, error } = await supabase.storage
+      .from('profile-images')
+      .upload(filePath, file, {
+        cacheControl: '3600',
+        upsert: false
       });
-    }
-  );
+
+    if (error) throw error;
+
+    // Get public URL
+    const { data: { publicUrl } } = supabase.storage
+      .from('profile-images')
+      .getPublicUrl(filePath);
+
+    console.log("File available at", publicUrl);
+    downloadLinkHook(publicUrl);
+    onSuccess("Ok");
+    setFileList((prevFileList) =>
+      prevFileList.map((item) => ({
+        ...item,
+        status: "done",
+        url: publicUrl,
+        thumbUrl: publicUrl,
+      }))
+    );
+    onProgress({ percent: 100 });
+
+  } catch (error) {
+    console.error('Error uploading file:', error.message);
+    onError(error);
+  }
 };
 
 const registerTeam = async (teamData) => {
@@ -78,8 +78,7 @@ const registerTeam = async (teamData) => {
     let model = {
       team_name: preProcess.step1.teamname || "",
       team_drive_link: preProcess.step1.link,
-      createdAt: new Date().toGMTString(),
-
+      created_at: new Date().toISOString(),
       member01: { ...preProcess.step2 },
       member02: { ...preProcess.step3 },
       member03: { ...preProcess.step4 },
@@ -90,41 +89,44 @@ const registerTeam = async (teamData) => {
 
     let documentID = model.team_name.trim();
 
-    const docRef = doc(
-      collection(Db, "team_name_2024"),
-      documentID
-    );
+    // Check if team exists
+    const { data: existingTeams } = await supabase
+      .from('team_name_2025')
+      .select('team_name')
+      .eq('team_name', documentID);
 
-    if (checkTeamExists(documentID)) {
-      console.log("Given team name already exists !");
-      new Error("Given team name already exists !");
+    if (existingTeams && existingTeams.length > 0) {
+      console.log("Given team name already exists!");
+      throw new Error("Given team name already exists!");
     }
 
-    await setDoc(docRef, model);
+    // Insert new team
+    const { data, error } = await supabase
+      .from('team_name_2025')
+      .insert([{ id: documentID, ...model }])
+      .select();
+
+    if (error) throw error;
     console.log("Team registered successfully!");
 
-    return [model, docRef];
+    return data;
   } catch (error) {
     console.error("Error saving data: ", error);
     new Error("Team registration failed");
   }
 };
 
-const checkTeamExists = async (documentID) => {
+const checkTeamExists = async (teamName) => {
   try {
-    const docRef = doc(Db, "team_name_2024", documentID);
-
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      console.log("Document exists:");
-      return true;
-    } else {
-      console.log("No such document!");
-      return false;
-    }
+    const { data } = await supabase
+      .from('team_name_2025')
+      .select('team_name')
+      .eq('team_name', teamName);
+    
+    return data && data.length > 0;
   } catch (error) {
-    console.error("Error checking document:", error);
-    throw new Error("Error checking document");
+    console.error('Error checking team existence:', error);
+    return false;
   }
 };
 

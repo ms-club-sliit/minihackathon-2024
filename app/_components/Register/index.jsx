@@ -10,10 +10,8 @@ import Step6 from "./step6";
 import TeamTicket from "@/components/TeamTicket";
 import TicketPopup from "@/components/TicketPopup";
 import EmailTemplate from "../EmailTemplate/EmailTemplate";
-import { Storage } from "@/app/firebase";
+import { supabase } from "@/app/supabase";
 import ReactDOMServer from "react-dom/server";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { updateDoc } from "firebase/firestore";
 import { useRouter } from 'next/navigation';
 
 function jsx2html(element) {
@@ -74,8 +72,11 @@ const stepItems = [
 ];
 
 async function sendEmail(to, subject, body) {
-  let response = await fetch(process.env.NEXT_PUBLIC_EMAIL_ENDPOINT, {
-    method: "post",
+  let response = await fetch('/api/send-email', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({ email: to, subject: subject, body: body }),
   });
 
@@ -83,6 +84,7 @@ async function sendEmail(to, subject, body) {
     return await response.json();
   }
 
+  console.error('Email sending failed:', await response.text());
   throw new Error(`Email sending failed with code ${response.status}`);
 }
 
@@ -198,42 +200,102 @@ const Register = () => {
   };
 
   const saveTicket = async (image_string) => {
-    let fileName = generateFileName();
-    const storageRef = ref(Storage, `/ticket-images-2024/${fileName}`);
-    let snapshot = await uploadBytes(storageRef, dataURItoBlob(image_string));
-    return await getDownloadURL(snapshot.ref);
+    // Add a static variable to track if we've already saved this ticket
+    if (saveTicket.lastSavedTicket) {
+      console.log('Reusing existing ticket URL:', saveTicket.lastSavedTicket);
+      return saveTicket.lastSavedTicket;
+    }
+
+    try {
+      let fileName = generateFileName();
+      const filePath = `ticket-images-2025/${fileName}`;
+      const blob = dataURItoBlob(image_string);
+      
+      const { data, error } = await supabase.storage
+        .from('uploads')
+        .upload(filePath, blob, {
+          cacheControl: '3600',
+          upsert: true,
+          contentType: 'image/jpeg'
+        });
+
+      if (error) {
+        console.error('Upload error:', error);
+        throw error;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('uploads')
+        .getPublicUrl(filePath);
+
+      // Save the URL for reuse
+      saveTicket.lastSavedTicket = publicUrl;
+      console.log('Uploaded successfully to:', publicUrl);
+      return publicUrl;
+    } catch (error) {
+      console.error('Error uploading ticket:', error);
+      throw error;
+    }
   };
 
   const onRender = async (dataURL) => {
+    // If already loading or ticket is already displayed, don't proceed
+    if (isTicketLoading || ticketData.display) {
+      return;
+    }
+
     setIsTicketLoading(true);
     try {
       let url = await saveTicket(dataURL);
-      let str = jsx2html(<EmailTemplate image={url} />);
-
-      await updateTicket(addedDoc.current.ref, url);
       const teamInfo = { ...addedDoc.current };
+      let str = jsx2html(<EmailTemplate 
+        image={url} 
+        team={teamInfo}
+      />);
 
+      // Send emails to team members
+      const emailPromises = [];
       for (let i = 1; i <= 4; i++) {
         if (`member0${i}` in teamInfo) {
           let member = teamInfo[`member0${i}`];
-          try {
-            await sendEmail(
+          const subject = `Mini Hackathon 2024 Registration - Team ${teamInfo.teamName}`;
+          emailPromises.push(
+            sendEmail(
               member.email,
-              "Mini Hackathon 2024 Team Registration",
+              subject,
               str
-            );
-          } catch (error) {
-            console.error(error);
-            console.log("Registration success, but email sending failed");
-          }
+            ).catch(error => {
+              console.error(`Failed to send email to member ${i}:`, error);
+              return null; // Continue with other emails even if one fails
+            })
+          );
         }
       }
 
-      setTicketData((prev) => ({ ...prev, onRender: null, display: true }));
+      // Wait for all emails to be sent (or fail)
+      const emailResults = await Promise.allSettled(emailPromises);
+      
+      // Check for any email sending failures
+      const failedEmails = emailResults.filter(result => result.status === 'rejected');
+      if (failedEmails.length > 0) {
+        console.error('Some emails failed to send:', failedEmails);
+        // You might want to show a notification to the user here
+      }
+
+      // Update ticket data only once
+      setTicketData(prev => ({
+        ...prev,
+        display: true,
+        ticketUrl: url,
+        onRender: null
+      }));
+      
+      setShowTicket(true);
     } catch (e) {
-      console.log("=-=-=", e);
+      console.error("Error in ticket generation:", e);
+    } finally {
+      setIsTicketLoading(false);
     }
-    setIsTicketLoading(false);
   };
 
   useEffect(() => {
