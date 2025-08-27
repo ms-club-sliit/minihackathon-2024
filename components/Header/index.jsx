@@ -52,112 +52,155 @@ export default function Header() {
   };
 
   return (
-    <main className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex flex-col items-center flex-wrap">
-        <Link href="/">
-          <Image
-            src="/images/2025-images/logo-main-2025.png"
-            alt="logo-main"
-            width={309}
-            height={358}
-            className="cursor-pointer my-5 w-40 sm:w-32 md:w-40 lg:w-80"
-            priority
-          />
-        </Link>
-        <div className="flex justify-between items-center h-full w-full px-4 md:px-[120px] lg:px-[202px] mb-3">
-          <div className="hidden md:flex">
-            <ul className="flex justify-around gap-8 items-center">
+    <main className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          
+          {/* Logo Section - Left */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="block">
+              <Image
+                src="/images/2025-images/logo-main-2025.png"
+                alt="MS Club SLIIT"
+                width={200}
+                height={60}
+                className="h-12 w-auto sm:h-14 lg:h-16 transition-transform duration-200 hover:scale-105"
+                priority
+              />
+            </Link>
+          </div>
+
+          {/* Navigation Section - Center */}
+          <nav className="hidden lg:flex flex-1 justify-center">
+            <ul className="flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <li key={index}>
                   <Link
                     href={item.link}
-                    className="text-lg font-semibold cursor-pointer transition-colors duration-200 hover:text-[#D6341C]"
+                    className="relative text-base font-medium text-gray-700 hover:text-[#EF4A23] transition-colors duration-200 group"
                   >
                     {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#EF4A23] transition-all duration-200 group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="md:hidden">
-            <Image
-              src="/images/icons/menu.png"
-              alt="menu"
-              width={100}
-              height={100}
-              className="cursor-pointer w-6 h-6 sm:w-8 sm:h-8"
-              onClick={handleNav}
-            />
-          </div>
-          <div className="hidden md:flex items-center justify-center">
-            {socialMedia.map((social, index) => (
-              <Link href={social.link} key={index}>
+          </nav>
+
+          {/* Social Media & Mobile Menu - Right */}
+          <div className="flex items-center space-x-4">
+            
+            {/* Social Media Icons - Desktop */}
+            <div className="hidden md:flex items-center space-x-3">
+              {socialMedia.map((social, index) => (
+                <Link 
+                  href={social.link} 
+                  key={index}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 group"
+                >
+                  <Image
+                    src={social.src}
+                    alt={social.alt}
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                  />
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button
+                onClick={handleNav}
+                className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#EF4A23]/20 transition-colors duration-200"
+                aria-label="Toggle menu"
+              >
                 <Image
-                  src={social.src}
-                  alt={social.alt}
-                  width={100}
-                  height={100}
-                  className="cursor-pointer mr-1 w-6 h-6 sm:w-8 sm:h-8 hover:opacity-80 transition-opacity duration-200"
+                  src="/images/icons/menu.png"
+                  alt="Menu"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
                 />
-              </Link>
-            ))}
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 p-10 bg-white rounded-lg md:hidden ease-in duration-500 ${
+        className={`fixed inset-0 bg-white/95 backdrop-blur-md lg:hidden transition-all duration-300 ${
           menuOpen
-            ? "m-2 border border-slate-300 shadow-2xl"
-            : "left-[-100%] w-full"
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
         }`}
       >
-        <div className="flex w-full items-center justify-start">
-          <div
-            onClick={handleNav}
-            className="cursor-pointer text-slate-600 border border-slate-600 p-1 rounded"
-          >
-            <AiOutlineClose size={25} />
-          </div>
-        </div>
-        <div className="flex-col py-8">
-          <ul className="flex flex-col gap-12">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <Link
-                  href={item.link}
-                  className="text-lg font-semibold transition-colors duration-200 hover:text-[#D6341C]"
-                  onClick={closeMenu}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-row justify-around items-center">
-          {socialMedia.map((social, index) => (
-            <Link href={social.link} key={index} onClick={closeMenu}>
+        <div className="flex flex-col h-full">
+          
+          {/* Mobile Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-100">
+            <Link href="/" onClick={closeMenu}>
               <Image
-                src={social.src}
-                alt={social.alt}
-                width={100}
-                height={100}
-                className="cursor-pointer mr-1 w-8 h-8 hover:opacity-80 transition-opacity duration-200"
+                src="/images/2025-images/logo-main-2025.png"
+                alt="MS Club SLIIT"
+                width={150}
+                height={45}
+                className="h-10 w-auto"
+                priority
               />
             </Link>
-          ))}
-        </div>
-        <div className="flex items-center w-full">
-          <Link href="/">
-            <Image
-              src="/images/logos/logo-light.png"
-              alt="logo-main"
-              width={309}
-              height={358}
-              className="cursor-pointer mt-8 w-36 sm:w-32 md:w-40 lg:w-80 mx-auto"
-              priority
-            />
-          </Link>
+            <button
+              onClick={handleNav}
+              className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#EF4A23]/20 transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <AiOutlineClose size={24} />
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="flex-1 px-6 py-8">
+            <nav>
+              <ul className="space-y-6">
+                {navItems.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.link}
+                      className="block text-xl font-medium text-gray-700 hover:text-[#EF4A23] transition-colors duration-200 py-2"
+                      onClick={closeMenu}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          {/* Mobile Social Media */}
+          <div className="px-6 py-6 border-t border-gray-100">
+            <p className="text-sm font-medium text-gray-500 mb-4">Follow Us</p>
+            <div className="flex items-center space-x-4">
+              {socialMedia.map((social, index) => (
+                <Link 
+                  href={social.link} 
+                  key={index} 
+                  onClick={closeMenu}
+                  className="p-3 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-200 group"
+                >
+                  <Image
+                    src={social.src}
+                    alt={social.alt}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </main>

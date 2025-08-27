@@ -18,8 +18,10 @@ export default function Timeline() {
     <main className="relative custom-gradient mb-10">
       <h1
         id="timeline"
-        className="text-3xl font-bold text-center mt-20 text-[#1E293B] min-[744px]:text-[38px] min-[1440px]:text-5xl mb-5"
+        className="text-3xl font-bold text-center mt-20 text-[#1E293B] min-[744px]:text-[38px] min-[1440px]:text-6xl mb-5"
       >
+
+        
         Timeline
       </h1>
       <div className="p-5 md:p-0">
