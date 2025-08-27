@@ -91,11 +91,11 @@ export default function Content() {
 
   return (
     <div className="w-screen relative">
-      <img
+      {/* <img
         src="images/design-left.png"
         alt="design-left"
         className="absolute -z-10 opacity-0 lg:opacity-50 lg:w-[30%] left-0 top-1/2"
-      />
+      /> */}
       <div className="container mx-auto text-justify text-[#161414]">
         {sections && Array.isArray(sections) ? (
           sections.map((section, index) => (

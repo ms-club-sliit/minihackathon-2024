@@ -80,7 +80,7 @@ export default function Timer() {
               cx="50%"
               cy="50%"
               r={`${radius}%`}
-              stroke="#0080FF"
+              stroke="#EF4A23" // change to hero section orange color (register button)
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDasharray}
               strokeDashoffset={strokeDashoffset}
