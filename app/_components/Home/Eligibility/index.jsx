@@ -25,7 +25,7 @@ export default function Eligibility() {
       </div>
       <div className="flex justify-center mt-6">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold">
+          <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-[#EF4A23] rounded-lg lg:rounded-xl hover:bg-[#D6341C] font-bold">
             Join our Teams Channel
           </button>
         </a>

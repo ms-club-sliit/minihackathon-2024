@@ -56,7 +56,7 @@ export default function Header() {
       <div className="flex flex-col items-center flex-wrap">
         <Link href="/">
           <Image
-            src="/images/logos/logo-light.png"
+            src="/images/2025-images/logo-main-2025.png"
             alt="logo-main"
             width={309}
             height={358}
@@ -71,7 +71,7 @@ export default function Header() {
                 <li key={index}>
                   <Link
                     href={item.link}
-                    className="text-lg font-semibold cursor-pointer"
+                    className="text-lg font-semibold cursor-pointer transition-colors duration-200 hover:text-[#D6341C]"
                   >
                     {item.name}
                   </Link>
@@ -97,7 +97,7 @@ export default function Header() {
                   alt={social.alt}
                   width={100}
                   height={100}
-                  className="cursor-pointer mr-1 w-6 h-6 sm:w-8 sm:h-8"
+                  className="cursor-pointer mr-1 w-6 h-6 sm:w-8 sm:h-8 hover:opacity-80 transition-opacity duration-200"
                 />
               </Link>
             ))}
@@ -125,7 +125,7 @@ export default function Header() {
               <li key={index}>
                 <Link
                   href={item.link}
-                  className="text-lg font-semibold"
+                  className="text-lg font-semibold transition-colors duration-200 hover:text-[#D6341C]"
                   onClick={closeMenu}
                 >
                   {item.name}
@@ -142,7 +142,7 @@ export default function Header() {
                 alt={social.alt}
                 width={100}
                 height={100}
-                className="cursor-pointer mr-1 w-8 h-8"
+                className="cursor-pointer mr-1 w-8 h-8 hover:opacity-80 transition-opacity duration-200"
               />
             </Link>
           ))}

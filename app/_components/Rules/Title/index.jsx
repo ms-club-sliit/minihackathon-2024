@@ -1,27 +1,31 @@
+"use client";
 import Image from "next/image";
 
 export default function Title() {
   return (
-    <div className="container mx-auto text-justify text-[#161414] px-10 lg:px-0">
-      <div className="w-full h-[350px] lg:h-[300px] flex flex-col lg:flex-row justify-center items-center gradient-45 rounded-[50px] mt-10 mb-16 lg:my-20">
-        <div className="w-full lg:w-[50%] h-full flex flex-col mt-10 lg:mt-0 lg:justify-center items-center lg:items-end">
-          <div className="w-fit h-fit flex flex-col mt-10 lg:mt-0 lg:justify-center items-center">
-            <p className="text-lg lg:text-3xl uppercase text-[#1E8FFE] my-3">
-              Minihackathon 2024
-            </p>
-            <p className="text-3xl px-5 lg:px-0 lg:text-6xl font-bold text-center uppercase">
-              Official Rules and <br />
-              Regulations
-            </p>
-          </div>
+    <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-0">
+      <div className="relative w-full flex flex-col items-center justify-center gradient-120 rounded-[30px] py-12 px-6 lg:px-12 overflow-hidden shadow-md my-12 lg:my-20">
+        
+        {/* Hero Image (Behind Text) */}
+        <div className="absolute -bottom-5 lg:-bottom-8 right-0 lg:right-10 w-[40%] lg:w-[30%] opacity-80">
+          <Image
+            src="/images/2025-images/hero-image-up.png"
+            alt="Hero Rules Image"
+            className="w-full h-auto object-contain"
+            width={200}
+            height={140}
+          />
         </div>
-        <Image
-          className="block w-[220px] lg:w-[300px]"
-          src="/images/robot-right.png"
-          alt="robot"
-          width={400}
-          height={200}
-        />
+
+        {/* Text Section */}
+        <div className="relative z-10 text-center max-w-2xl flex flex-col gap-3 lg:gap-4">
+          <p className="text-xs sm:text-sm md:text-base text-[#EF4A23] uppercase tracking-wide font-medium">
+            Minihackathon 2025
+          </p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 uppercase leading-tight">
+            Official Rules and <br /> Regulations
+          </h1>
+        </div>
       </div>
     </div>
   );

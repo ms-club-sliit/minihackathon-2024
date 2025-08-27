@@ -1,58 +1,57 @@
 "use client";
 import Image from "next/image";
-import HackathonImage from "../../../../public/images/AIBot.png";
+import HackathonImage from "../../../../public/images/2025-images/hero-image-up.png";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
   return (
-    <div className="container mx-auto text-justify text-[#161414] px-10 lg:px-0">
-      <div className="relative w-full h-auto flex flex-row px-10 justify-left items-center lg:justify-center gradient-120 rounded-[20px] lg:rounded-[50px] my-10 lg:my-20 py-10">
-        <div className="lg:pr-10">
-          <div className="">
-            <p className="text-xs lg:text-lg text-textBlue">
-              MINIHACKATHON 2024
-            </p>
-            <h2 className="text-lg lg:text-3xl font-semibold text-gray-800">
-              IT&apos;S HACKATHON TIME!
-            </h2>
-            <div className="py-2 lg:py-5">
-              <h1 className="text-3xl lg:text-6xl font-bold text-left">
-                ARE YOU READY?
-              </h1>
-              <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px] text-left">
-                Showcase your creativity and technical skills In our tech
-                competition!
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col lg:flex-row items-start my-2 gap-3 lg:gap-5">
-            <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 text-white bg-blue-500 rounded-lg lg:rounded-xl hover:bg-blue-700 font-bold"
-              onClick={() => {
-                router.push('/register');
-              }}>
-              Register
-            </button>
-            <button className="text-xs lg:text-base px-4 py-2 lg:px-8 lg:py-3 flex items-center text-blue-500 bg-white rounded-lg lg:rounded-xl hover:bg-blue-700 hover:text-white font-bold"
-              onClick={() => {
-                router.push('/rules');
-              }}>
-              Full Instructions
-              <span className="material-symbols-outlined">chevron_right</span>
-            </button>
-
-            <p className="text-xs lg:text-lg text-gray-600 lg:w-[500px] text-left">
-              Registration for the competition is now closed. Thank you to
-              everyone who registered!
-            </p>
-          </div>
-        </div>
-        <div className="absolute lg:static right-5 bottom-1">
+    <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-0">
+      <div className="relative w-full flex flex-col items-center justify-center gradient-120 rounded-[30px] py-8 px-6 lg:px-12 overflow-hidden shadow-md my-12 lg:my-20">
+        
+        {/* Hero Image (Behind Text) */}
+        <div className="absolute -bottom-5 lg:-bottom-8 right-0 lg:right-8 w-[45%] lg:w-[35%] opacity-80">
           <Image
             src={HackathonImage}
-            alt="AI Bot"
-            className="w-[150px] lg:w-[320px] object-contain"
+            alt="Hackathon Elements"
+            className="w-full h-auto object-contain"
           />
+        </div>
+
+        {/* Text Section */}
+        <div className="relative z-10 text-center max-w-2xl flex flex-col gap-3 lg:gap-4">
+          <p className="text-xs sm:text-sm md:text-base text-[#EF4A23] uppercase tracking-wide font-medium">
+            MINIHACKATHON 2025
+          </p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">
+            IT&apos;S HACKATHON TIME!
+          </h2>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800">
+            ARE YOU READY?
+          </h1>
+          <p className="text-sm sm:text-base md:text-base text-gray-700">
+            Showcase your creativity and technical skills in our tech competition!
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+            <button
+              className="px-5 py-2 bg-[#EF4A23] text-white font-semibold rounded-lg hover:bg-[#D6341C] transition-colors"
+              onClick={() => router.push("/register")}
+            >
+              Register
+            </button>
+            <button
+              className="px-5 py-2 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#EF4A23] transition-colors flex items-center"
+              onClick={() => router.push("/rules")}
+            >
+              Full Instructions
+              <span className="material-symbols-outlined ml-1">chevron_right</span>
+            </button>
+          </div>
+
+          <p className="text-gray-800 mt-2 text-sm sm:text-base">
+            Registration for the competition is now closed. Thank you to everyone who registered!
+          </p>
         </div>
       </div>
     </div>
