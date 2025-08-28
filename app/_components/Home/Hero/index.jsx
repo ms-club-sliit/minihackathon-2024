@@ -17,7 +17,7 @@ export default function Home() {
         </div>
 
         {/* Hero Image (Behind Text) with Enhanced Styling */}
-        <div className="absolute -bottom-8 lg:-bottom-12 right-0 lg:right-12 w-[50%] lg:w-[38%] opacity-90 transform hover:scale-105 transition-transform duration-700 ease-out">
+        <div className="absolute -bottom-8 lg:-bottom-12 right-0 lg:right-12 w-[50%] lg:w-[38%] opacity-30 transform hover:scale-105 transition-transform duration-700 ease-out">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-t from-[#EF4A23]/10 to-transparent blur-3xl"></div>
             <Image
