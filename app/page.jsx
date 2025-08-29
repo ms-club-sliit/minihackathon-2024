@@ -3,7 +3,7 @@ import Eligibility from "./_components/Home/Eligibility";
 import Gallery from "./_components/Home/Gallery";
 import Hero from "./_components/Home/Hero";
 import PastWinnersList from "../components/Home/PastWinner";
-import Sponsor from "@/components/Home/Sponsors/sponsors";
+import Sponsor from "@/components/Home/Sponsors";
 import Timeline from "./_components/Home/Timeline";
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
     <main>
       <Hero />
       <CountdownTimer />
+      <Sponsor />
       <Eligibility />
       <Timeline />
       <Gallery />
-      <Sponsor />
       <PastWinnersList />
     </main>
   );
